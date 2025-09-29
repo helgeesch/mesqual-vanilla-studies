@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150">
+  <!-- Background -->
+  <rect width="900" height="1150" fill="white"/>
+  <!-- Primary Colors -->
+  <text x="50" y="30" font-family="Arial" font-size="20" font-weight="bold">Primary Colors</text>
+
+  <!-- Mint Shades -->
+  <g transform="translate(50, 60)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Mint</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#e6fff7"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#e6fff7</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#55efc4"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#55efc4</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#00A98F"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#00A98F</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#009677"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#009677</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#006b54"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#006b54</text>
+  </g>
+
+  <!-- Cyan Shades -->
+  <g transform="translate(50, 200)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Cyan</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#e6ffff"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#e6ffff</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#8ee8e7"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#8ee8e7</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#00cec9"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#00cec9</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#00a29a"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#00a29a</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#00756e"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#00756e</text>
+  </g>
+
+  <!-- Blue Shades -->
+  <g transform="translate(50, 340)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Blue</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#e6f4ff"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#e6f4ff</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#74b9ff"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#74b9ff</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#0984e3"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#0984e3</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#0063b1"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#0063b1</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#004680"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#004680</text>
+  </g>
+
+  <!-- Red Shades -->
+  <g transform="translate(50, 480)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Red</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#ffe6e6"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#ffe6e6</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#ff7675"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#ff7675</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#d63031"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#d63031</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#b02525"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#b02525</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#801b1b"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#801b1b</text>
+  </g>
+
+  <!-- Pink Shades -->
+  <g transform="translate(50, 620)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Pink</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#ffe6f3"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#ffe6f3</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#fd79a8"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#fd79a8</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#e84393"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#e84393</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#c13584"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#c13584</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#962264"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#962264</text>
+  </g>
+
+  <!-- Secondary Colors -->
+  <text x="50" y="790" font-family="Arial" font-size="20" font-weight="bold">Secondary Colors</text>
+
+  <!-- Gray Shades -->
+  <g transform="translate(50, 820)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Gray</text>
+
+    <rect x="0" y="0" width="100" height="60" fill="#f8f9fa"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#f8f9fa</text>
+
+    <rect x="120" y="0" width="100" height="60" fill="#dee2e6"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#dee2e6</text>
+
+    <rect x="240" y="0" width="100" height="60" fill="#6c757d"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#6c757d</text>
+
+    <rect x="360" y="0" width="100" height="60" fill="#495057"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#495057</text>
+
+    <rect x="480" y="0" width="100" height="60" fill="#2d3436"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#2d3436</text>
+  </g>
+
+  <!-- Accent Colors -->
+  <text x="50" y="960" font-family="Arial" font-size="20" font-weight="bold">Accent Colors</text>
+
+  <!-- New Accent Colors -->
+  <g transform="translate(50, 990)">
+    <text x="0" y="-10" font-family="Arial" font-size="16" font-weight="bold">Accent Colors</text>
+
+    <!-- Success Light -->
+    <rect x="0" y="0" width="100" height="60" fill="#badc58"/>
+    <text x="50" y="90" font-family="monospace" font-size="14" text-anchor="middle">#badc58</text>
+
+    <!-- Success Dark -->
+    <rect x="120" y="0" width="100" height="60" fill="#6ab04c"/>
+    <text x="170" y="90" font-family="monospace" font-size="14" text-anchor="middle">#6ab04c</text>
+
+    <!-- Orange Light -->
+    <rect x="240" y="0" width="100" height="60" fill="#fdcb6e"/>
+    <text x="290" y="90" font-family="monospace" font-size="14" text-anchor="middle">#fdcb6e</text>
+
+    <!-- Orange Dark -->
+    <rect x="360" y="0" width="100" height="60" fill="#e17055"/>
+    <text x="410" y="90" font-family="monospace" font-size="14" text-anchor="middle">#e17055</text>
+
+    <!-- Purple Light -->
+    <rect x="480" y="0" width="100" height="60" fill="#a29bfe"/>
+    <text x="530" y="90" font-family="monospace" font-size="14" text-anchor="middle">#a29bfe</text>
+
+    <!-- Purple Dark -->
+    <rect x="600" y="0" width="100" height="60" fill="#6c5ce7"/>
+    <text x="650" y="90" font-family="monospace" font-size="14" text-anchor="middle">#6c5ce7</text>
+  </g>
+</svg>

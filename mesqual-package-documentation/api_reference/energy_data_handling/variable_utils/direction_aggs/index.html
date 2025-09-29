@@ -1,0 +1,3711 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/direction_aggs/">
+      
+      
+        <link rel="prev" href="../in_common_aggs/">
+      
+      
+        <link rel="next" href="../congestion_rent/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Up-/Down Directional Aggregations - MESQUAL Suite Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mesqual-aggregate-directional-up-down-to-net-variables" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="MESQUAL Suite Documentation" class="md-header__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MESQUAL Suite Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Up-/Down Directional Aggregations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../study_manager/" class="md-tabs__link">
+          
+  
+  
+  MESQUAL API Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../mesqual-study-01/notebooks/mesqual_101_study_manager_and_basic_fetching/" class="md-tabs__link">
+          
+  
+  
+  Studies & Examples
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="MESQUAL Suite Documentation" class="md-nav__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo-white.svg" alt="logo">
+
+    </a>
+    MESQUAL Suite Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MESQUAL API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StudyManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datasets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Flag System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Flag System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flag_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FlagIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../visualization/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Visualization Modules
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TimeSeriesDashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../visualization/folium_viz_system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Folium Viz System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Folium Viz System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/circle_marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circle Marker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/line_text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Line Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/arrow_icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrow Icon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_7" id="__nav_2_2_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abstract System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/data_item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_viz_system/kpi_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI Collection Visualizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/folium_legend_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Folium Legend System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/html_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/html_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Energy Data Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Energy Data Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../area_accounting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Area Accounting
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Area Accounting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../area_accounting/model_gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area / Border Model Generators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../area_accounting/area_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../area_accounting/border_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Border Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../model_handling/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Model Membership Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Model Membership Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model_handling/property_enricher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Property Enricher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model_handling/pairs_appender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pairs Appender
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Variable Utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Variable Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../in_common_aggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    In-common Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Up-/Down Directional Aggregations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Up-/Down Directional Aggregations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpDownNetAppender
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpDownNetAppender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_net_columns_from_up_down_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_net_columns_from_up_down_columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_total_columns_from_up_down_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_total_columns_from_up_down_columns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../congestion_rent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Congestion Rent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regional_trade_balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regional Trade Balance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../granularity_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Granularity Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network_lines_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Lines Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../time_series_gap_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Series Gap Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../utils/pandas_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    pandas_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            pandas_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/flatten_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flatten DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/pend_props/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pend Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filter by Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/xs_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xs DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/sort_multiindex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sort MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/merge_multi_index_levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Merge MultiIndex Levels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/set_new_column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set New Column in MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/pandas_utils/combine_dfs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Combine DFs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../utils/plotly_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    plotly_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            plotly_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/plotly_utils/plotly_theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PlotlyTheme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/plotly_utils/figure_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    figure_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utils/plotly_utils/px_category_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    px_category_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Studies & Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Studies & Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Intro to MESQUAL
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Intro to MESQUAL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_101_study_manager_and_basic_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 101: StudyManager and Dataset Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_102_mastering_data_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 102: Advanced Data Fetching Techniques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_103_scenario_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 103: Scenario Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_301_time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 301: Time Series Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_302_segmented_colormap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 302: Segmented Colormap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_303_folium_model_df_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 401: Folium Model Data Visualization - Areas, Points, and Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_304_folium_area_kpi_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 402: Folium KPI Visualization System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_304_simple_area_kpi_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 303: Interactive Geospatial with Folium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_307_country_plotter_util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 307: Country Plotter Utility Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../mesqual-study-01/notebooks/mesqual_308_html_dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 305: HTML Dashboard Utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpDownNetAppender
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpDownNetAppender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_net_columns_from_up_down_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_net_columns_from_up_down_columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_total_columns_from_up_down_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      append_total_columns_from_up_down_columns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mesqual-aggregate-directional-up-down-to-net-variables">MESQUAL Aggregate Directional (Up- / Down-) to Net-Variables<a class="headerlink" href="#mesqual-aggregate-directional-up-down-to-net-variables" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">UpDownNetAppender</span>
+
+
+<a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+
+
+        <p>Computes and appends net and total columns from bidirectional data.</p>
+<p>This utility class processes DataFrames containing bidirectional energy data
+(e.g., power flows, trade volumes) and creates derived columns representing
+net flows (up - down) and total flows (up + down). It automatically identifies
+column pairs based on configurable directional identifiers.</p>
+<p>Energy market context:
+Bidirectional energy data is common in electricity markets where flows,
+trades, or capacities can occur in both directions between nodes or areas.
+Net calculations show the overall direction and magnitude of transfers,
+while total calculations show overall activity levels.</p>
+<p>Common use cases:
+- Power flow analysis: Converting line flows to net flows
+- Trade balance: Net imports/exports from bilateral trade data</p>
+<p>The class uses CommonBaseKeyFinder to identify related column pairs and
+supports flexible naming conventions for input and output columns.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>up_identifier</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>String identifier for "up" direction columns (default: '_up')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_up&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>down_identifier</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>String identifier for "down" direction columns (default: '_down')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_down&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>net_col_suffix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Suffix for generated net columns (default: '_net')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_net&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>net_col_prefix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Prefix for generated net columns (default: None)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>total_col_suffix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Suffix for generated total columns (default: '_total')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_total&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>total_col_prefix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Prefix for generated total columns (default: None)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="AttributeError">AttributeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If neither suffix nor prefix provided for net or total columns</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Example:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; # Data with bidirectional flows
+&gt;&gt;&gt; data = pd.DataFrame({
+...     &#39;DE_FR_up&#39;: [100, 200, 300],
+...     &#39;DE_FR_down&#39;: [30, 50, 100],
+...     &#39;FR_BE_up&#39;: [400, 500, 600],
+...     &#39;FR_BE_down&#39;: [150, 200, 300]
+... })
+&gt;&gt;&gt; 
+&gt;&gt;&gt; appender = UpDownNetAppender()
+&gt;&gt;&gt; result = appender.append_net_columns_from_up_down_columns(data)
+&gt;&gt;&gt; print(result.columns)  # Includes DE_FR_net, FR_BE_net
+</code></pre></div>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>submodules/mesqual/mesqual/energy_data_handling/variable_utils/aggregate_up_down_directions_to_net_column.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UpDownNetAppender</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes and appends net and total columns from bidirectional data.</span>
+
+<span class="sd">    This utility class processes DataFrames containing bidirectional energy data</span>
+<span class="sd">    (e.g., power flows, trade volumes) and creates derived columns representing</span>
+<span class="sd">    net flows (up - down) and total flows (up + down). It automatically identifies</span>
+<span class="sd">    column pairs based on configurable directional identifiers.</span>
+
+<span class="sd">    Energy market context:</span>
+<span class="sd">    Bidirectional energy data is common in electricity markets where flows,</span>
+<span class="sd">    trades, or capacities can occur in both directions between nodes or areas.</span>
+<span class="sd">    Net calculations show the overall direction and magnitude of transfers,</span>
+<span class="sd">    while total calculations show overall activity levels.</span>
+
+<span class="sd">    Common use cases:</span>
+<span class="sd">    - Power flow analysis: Converting line flows to net flows</span>
+<span class="sd">    - Trade balance: Net imports/exports from bilateral trade data</span>
+
+<span class="sd">    The class uses CommonBaseKeyFinder to identify related column pairs and</span>
+<span class="sd">    supports flexible naming conventions for input and output columns.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        up_identifier: String identifier for &quot;up&quot; direction columns (default: &#39;_up&#39;)</span>
+<span class="sd">        down_identifier: String identifier for &quot;down&quot; direction columns (default: &#39;_down&#39;)</span>
+<span class="sd">        net_col_suffix: Suffix for generated net columns (default: &#39;_net&#39;)</span>
+<span class="sd">        net_col_prefix: Prefix for generated net columns (default: None)</span>
+<span class="sd">        total_col_suffix: Suffix for generated total columns (default: &#39;_total&#39;)</span>
+<span class="sd">        total_col_prefix: Prefix for generated total columns (default: None)</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AttributeError: If neither suffix nor prefix provided for net or total columns</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">        &gt;&gt;&gt; # Data with bidirectional flows</span>
+<span class="sd">        &gt;&gt;&gt; data = pd.DataFrame({</span>
+<span class="sd">        ...     &#39;DE_FR_up&#39;: [100, 200, 300],</span>
+<span class="sd">        ...     &#39;DE_FR_down&#39;: [30, 50, 100],</span>
+<span class="sd">        ...     &#39;FR_BE_up&#39;: [400, 500, 600],</span>
+<span class="sd">        ...     &#39;FR_BE_down&#39;: [150, 200, 300]</span>
+<span class="sd">        ... })</span>
+<span class="sd">        &gt;&gt;&gt; </span>
+<span class="sd">        &gt;&gt;&gt; appender = UpDownNetAppender()</span>
+<span class="sd">        &gt;&gt;&gt; result = appender.append_net_columns_from_up_down_columns(data)</span>
+<span class="sd">        &gt;&gt;&gt; print(result.columns)  # Includes DE_FR_net, FR_BE_net</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">up_identifier</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_up&#39;</span><span class="p">,</span>
+            <span class="n">down_identifier</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_down&#39;</span><span class="p">,</span>
+            <span class="n">net_col_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_net&#39;</span><span class="p">,</span>
+            <span class="n">net_col_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">total_col_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span>
+            <span class="n">total_col_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the UpDownNetAppender with naming conventions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            up_identifier: String identifier for &quot;up&quot; direction columns</span>
+<span class="sd">            down_identifier: String identifier for &quot;down&quot; direction columns  </span>
+<span class="sd">            net_col_suffix: Suffix for generated net columns</span>
+<span class="sd">            net_col_prefix: Prefix for generated net columns</span>
+<span class="sd">            total_col_suffix: Suffix for generated total columns</span>
+<span class="sd">            total_col_prefix: Prefix for generated total columns</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If neither suffix nor prefix provided for net or total columns</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_up_identifier</span> <span class="o">=</span> <span class="n">up_identifier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_down_identifier</span> <span class="o">=</span> <span class="n">down_identifier</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_suffix</span> <span class="o">=</span> <span class="n">net_col_suffix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_prefix</span> <span class="o">=</span> <span class="n">net_col_prefix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_net_col_suffix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_prefix</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Either net_col_suffix or net_col_prefix must be provided&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_suffix</span> <span class="o">=</span> <span class="n">total_col_suffix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_prefix</span> <span class="o">=</span> <span class="n">total_col_prefix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_col_suffix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_prefix</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Either total_col_suffix or total_col_prefix must be provided&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_common_base_key_finder</span> <span class="o">=</span> <span class="n">CommonBaseKeyFinder</span><span class="p">(</span><span class="n">up_identifier</span><span class="p">,</span> <span class="n">down_identifier</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">append_net_columns_from_up_down_columns</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Append net columns (up - down) to the DataFrame.</span>
+
+<span class="sd">        Identifies all column pairs with up/down directional identifiers and</span>
+<span class="sd">        creates corresponding net columns by subtracting down values from up values.</span>
+<span class="sd">        Net columns represent the overall direction and magnitude of flows.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ts_df_with_up_down_columns: DataFrame containing bidirectional columns</span>
+<span class="sd">                with up/down identifiers. Can have single or multi-level column index.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataFrame with original columns plus new net columns. Net values are</span>
+<span class="sd">            positive when up &gt; down, negative when down &gt; up.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">            &gt;&gt;&gt; data = pd.DataFrame({</span>
+<span class="sd">            ...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]</span>
+<span class="sd">            ... })</span>
+<span class="sd">            &gt;&gt;&gt; result = appender.append_net_columns_from_up_down_columns(data)</span>
+<span class="sd">            &gt;&gt;&gt; print(result[&#39;flow_net&#39;])  # [70, 150]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">,</span> <span class="s1">&#39;net&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">append_total_columns_from_up_down_columns</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Append total columns (up + down) to the DataFrame.</span>
+
+<span class="sd">        Identifies all column pairs with up/down directional identifiers and</span>
+<span class="sd">        creates corresponding total columns by adding up and down values.</span>
+<span class="sd">        Total columns represent the overall activity level regardless of direction.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ts_df_with_up_down_columns: DataFrame containing bidirectional columns</span>
+<span class="sd">                with up/down identifiers. Can have single or multi-level column index.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataFrame with original columns plus new total columns. Total values</span>
+<span class="sd">            represent the sum of absolute flows in both directions.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">            &gt;&gt;&gt; data = pd.DataFrame({</span>
+<span class="sd">            ...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]  </span>
+<span class="sd">            ... })</span>
+<span class="sd">            &gt;&gt;&gt; result = appender.append_total_columns_from_up_down_columns(data)</span>
+<span class="sd">            &gt;&gt;&gt; print(result[&#39;flow_total&#39;])  # [130, 250]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_append_columns_from_up_down_columns</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+            <span class="n">which_agg</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal method to append either net or total columns.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ts_df_with_up_down_columns: DataFrame with bidirectional data</span>
+<span class="sd">            which_agg: Type of aggregation to perform (&#39;net&#39; or &#39;total&#39;)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataFrame with new aggregated columns appended</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: If which_agg is not &#39;net&#39; or &#39;total&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">up_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_up_identifier</span>
+        <span class="n">down_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_down_identifier</span>
+
+        <span class="n">_col_names</span> <span class="o">=</span> <span class="n">ts_df_with_up_down_columns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">up_down_columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common_base_key_finder</span><span class="o">.</span><span class="n">get_keys_for_which_all_association_tags_appear</span><span class="p">(</span><span class="n">_col_names</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">up_down_columns</span><span class="p">:</span>
+            <span class="n">up_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="si">}{</span><span class="n">up_id</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="n">down_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="si">}{</span><span class="n">down_id</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="k">if</span> <span class="n">which_agg</span> <span class="o">==</span> <span class="s1">&#39;net&#39;</span><span class="p">:</span>
+                <span class="n">new_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_net_col_prefix</span><span class="si">}{</span><span class="n">c</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">_net_col_suffix</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="n">new_values</span> <span class="o">=</span> <span class="n">ts_df_with_up_down_columns</span><span class="p">[</span><span class="n">up_col</span><span class="p">]</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span>
+                    <span class="n">ts_df_with_up_down_columns</span><span class="p">[</span><span class="n">down_col</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">which_agg</span> <span class="o">==</span> <span class="s1">&#39;total&#39;</span><span class="p">:</span>
+                <span class="n">new_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_col_prefix</span><span class="si">}{</span><span class="n">c</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_col_suffix</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="n">new_values</span> <span class="o">=</span> <span class="n">ts_df_with_up_down_columns</span><span class="p">[</span><span class="n">up_col</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                    <span class="n">ts_df_with_up_down_columns</span><span class="p">[</span><span class="n">down_col</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+            <span class="n">ts_df_with_up_down_columns</span> <span class="o">=</span> <span class="n">set_column</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">,</span> <span class="n">new_col</span><span class="p">,</span> <span class="n">new_values</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ts_df_with_up_down_columns</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.__init__" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">__init__</span>
+
+
+<a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.__init__" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">__init__</span><span class="p">(</span><span class="n">up_identifier</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;_up&#39;</span><span class="p">,</span> <span class="n">down_identifier</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;_down&#39;</span><span class="p">,</span> <span class="n">net_col_suffix</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;_net&#39;</span><span class="p">,</span> <span class="n">net_col_prefix</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">total_col_suffix</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span> <span class="n">total_col_prefix</span><span class="p">:</span> <span class="n"><span title="str">str</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the UpDownNetAppender with naming conventions.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>up_identifier</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>String identifier for "up" direction columns</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_up&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>down_identifier</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>String identifier for "down" direction columns  </p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_down&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>net_col_suffix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Suffix for generated net columns</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_net&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>net_col_prefix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Prefix for generated net columns</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>total_col_suffix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Suffix for generated total columns</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;_total&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>total_col_prefix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Prefix for generated total columns</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="AttributeError">AttributeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If neither suffix nor prefix provided for net or total columns</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>submodules/mesqual/mesqual/energy_data_handling/variable_utils/aggregate_up_down_directions_to_net_column.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">up_identifier</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_up&#39;</span><span class="p">,</span>
+        <span class="n">down_identifier</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_down&#39;</span><span class="p">,</span>
+        <span class="n">net_col_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_net&#39;</span><span class="p">,</span>
+        <span class="n">net_col_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">total_col_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;_total&#39;</span><span class="p">,</span>
+        <span class="n">total_col_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the UpDownNetAppender with naming conventions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        up_identifier: String identifier for &quot;up&quot; direction columns</span>
+<span class="sd">        down_identifier: String identifier for &quot;down&quot; direction columns  </span>
+<span class="sd">        net_col_suffix: Suffix for generated net columns</span>
+<span class="sd">        net_col_prefix: Prefix for generated net columns</span>
+<span class="sd">        total_col_suffix: Suffix for generated total columns</span>
+<span class="sd">        total_col_prefix: Prefix for generated total columns</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AttributeError: If neither suffix nor prefix provided for net or total columns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_up_identifier</span> <span class="o">=</span> <span class="n">up_identifier</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_down_identifier</span> <span class="o">=</span> <span class="n">down_identifier</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_suffix</span> <span class="o">=</span> <span class="n">net_col_suffix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_prefix</span> <span class="o">=</span> <span class="n">net_col_prefix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_net_col_suffix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net_col_prefix</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Either net_col_suffix or net_col_prefix must be provided&quot;</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_suffix</span> <span class="o">=</span> <span class="n">total_col_suffix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_prefix</span> <span class="o">=</span> <span class="n">total_col_prefix</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_col_suffix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_col_prefix</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Either total_col_suffix or total_col_prefix must be provided&quot;</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_common_base_key_finder</span> <span class="o">=</span> <span class="n">CommonBaseKeyFinder</span><span class="p">(</span><span class="n">up_identifier</span><span class="p">,</span> <span class="n">down_identifier</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_net_columns_from_up_down_columns" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">append_net_columns_from_up_down_columns</span>
+
+
+<a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_net_columns_from_up_down_columns" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">append_net_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n"><span title="pandas.DataFrame">DataFrame</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="pandas.DataFrame">DataFrame</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Append net columns (up - down) to the DataFrame.</p>
+<p>Identifies all column pairs with up/down directional identifiers and
+creates corresponding net columns by subtracting down values from up values.
+Net columns represent the overall direction and magnitude of flows.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_df_with_up_down_columns</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame containing bidirectional columns
+with up/down identifiers. Can have single or multi-level column index.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame with original columns plus new net columns. Net values are</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>positive when up &gt; down, negative when down &gt; up.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Example:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; data = pd.DataFrame({
+...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]
+... })
+&gt;&gt;&gt; result = appender.append_net_columns_from_up_down_columns(data)
+&gt;&gt;&gt; print(result[&#39;flow_net&#39;])  # [70, 150]
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>submodules/mesqual/mesqual/energy_data_handling/variable_utils/aggregate_up_down_directions_to_net_column.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">append_net_columns_from_up_down_columns</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Append net columns (up - down) to the DataFrame.</span>
+
+<span class="sd">    Identifies all column pairs with up/down directional identifiers and</span>
+<span class="sd">    creates corresponding net columns by subtracting down values from up values.</span>
+<span class="sd">    Net columns represent the overall direction and magnitude of flows.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ts_df_with_up_down_columns: DataFrame containing bidirectional columns</span>
+<span class="sd">            with up/down identifiers. Can have single or multi-level column index.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        DataFrame with original columns plus new net columns. Net values are</span>
+<span class="sd">        positive when up &gt; down, negative when down &gt; up.</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; data = pd.DataFrame({</span>
+<span class="sd">        ...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]</span>
+<span class="sd">        ... })</span>
+<span class="sd">        &gt;&gt;&gt; result = appender.append_net_columns_from_up_down_columns(data)</span>
+<span class="sd">        &gt;&gt;&gt; print(result[&#39;flow_net&#39;])  # [70, 150]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">,</span> <span class="s1">&#39;net&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_total_columns_from_up_down_columns" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">append_total_columns_from_up_down_columns</span>
+
+
+<a href="#mesqual.energy_data_handling.variable_utils.aggregate_up_down_directions_to_net_column.UpDownNetAppender.append_total_columns_from_up_down_columns" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">append_total_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n"><span title="pandas.DataFrame">DataFrame</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="pandas.DataFrame">DataFrame</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Append total columns (up + down) to the DataFrame.</p>
+<p>Identifies all column pairs with up/down directional identifiers and
+creates corresponding total columns by adding up and down values.
+Total columns represent the overall activity level regardless of direction.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_df_with_up_down_columns</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame containing bidirectional columns
+with up/down identifiers. Can have single or multi-level column index.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame with original columns plus new total columns. Total values</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>represent the sum of absolute flows in both directions.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Example:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; data = pd.DataFrame({
+...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]  
+... })
+&gt;&gt;&gt; result = appender.append_total_columns_from_up_down_columns(data)
+&gt;&gt;&gt; print(result[&#39;flow_total&#39;])  # [130, 250]
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>submodules/mesqual/mesqual/energy_data_handling/variable_utils/aggregate_up_down_directions_to_net_column.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">append_total_columns_from_up_down_columns</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ts_df_with_up_down_columns</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Append total columns (up + down) to the DataFrame.</span>
+
+<span class="sd">    Identifies all column pairs with up/down directional identifiers and</span>
+<span class="sd">    creates corresponding total columns by adding up and down values.</span>
+<span class="sd">    Total columns represent the overall activity level regardless of direction.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ts_df_with_up_down_columns: DataFrame containing bidirectional columns</span>
+<span class="sd">            with up/down identifiers. Can have single or multi-level column index.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        DataFrame with original columns plus new total columns. Total values</span>
+<span class="sd">        represent the sum of absolute flows in both directions.</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; data = pd.DataFrame({</span>
+<span class="sd">        ...     &#39;flow_up&#39;: [100, 200], &#39;flow_down&#39;: [30, 50]  </span>
+<span class="sd">        ... })</span>
+<span class="sd">        &gt;&gt;&gt; result = appender.append_total_columns_from_up_down_columns(data)</span>
+<span class="sd">        &gt;&gt;&gt; print(result[&#39;flow_total&#39;])  # [130, 250]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_columns_from_up_down_columns</span><span class="p">(</span><span class="n">ts_df_with_up_down_columns</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "content.tabs.link", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
