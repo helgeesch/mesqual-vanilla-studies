@@ -5,6 +5,7 @@ repo_url: 'https://github.com/helgeesch/mesqual-vanilla-studies/'
 
 theme:
   name: material
+  logo: assets/logo-white.svg
   palette:
     primary: 'teal'
     accent: 'amber'
@@ -26,7 +27,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [submodules]
+          paths: [submodules/mesqual]
           options:
             heading_level: 2
             show_root_heading: true

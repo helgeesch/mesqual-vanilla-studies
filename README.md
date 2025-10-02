@@ -1,7 +1,7 @@
 [![Python >=3.10](https://img.shields.io/badge/python-≥3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-# MESQUAL vanilla studies <img src="https://raw.githubusercontent.com/helgeesch/mesqual/refs/heads/main/assets/logo_no_text_no_bg.svg" width="70" height="70" alt="logo">
+# <img src="https://raw.githubusercontent.com/helgeesch/mesqual/18fe3fc20bace115a116555b2872d57925698e48/assets/logo-turq.svg" width="30" height="30" alt="logo"> MESQUAL vanilla studies
 
 ## Overview
 
@@ -9,7 +9,7 @@
 
 This vanilla studies repository demonstrates MESQUAL's capabilities through practical examples and serves as a template architecture for organizing energy modeling studies. 
 
-The repo integrates the foundation package [mesqual](https://github.com/helgeesch/mesqual), and the interface packages [mesqual-pypsa](https://github.com/helgeesch/mesqual-pypsa), [mesqual-plexos](https://github.com/helgeesch/mesqual-plexos) (to be released) as submodules. 
+The repo integrates the foundation package [mesqual](https://github.com/helgeesch/mesqual), and the interface packages [mesqual-pypsa](https://github.com/helgeesch/mesqual-pypsa), [mesqual-plexos](https://github.com/helgeesch/mesqual-plexos) (requires access) as submodules. 
 
 Visit the foundation package's README to find out more about the the [MESQUAL value proposition](https://github.com/helgeesch/mesqual) or dive into the hands-on example studies in this repo to see MESQUAL in action.
 

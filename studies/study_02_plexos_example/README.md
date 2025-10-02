@@ -1,3 +1,3 @@
 # Study 02: Plexos Example
 
-Stay tuned, coming soon...
+access required
