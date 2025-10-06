@@ -49,7 +49,7 @@ class BranchesP(PyPSAInterpreter):
 
     @property
     def accepted_flags(self) -> set[FlagType]:
-        return {'branches_t.p0', 'branches_t.p0'}
+        return {'branches_t.p0', 'branches_t.p1'}
 
     def _required_flags_for_flag(self, flag: FlagType) -> set[FlagType]:
         return {f'{f}_t.p{n}' for f in self._object_classes_to_merge for n in [0, 1]}
@@ -95,11 +95,10 @@ class CountryBorderFlows(PyPSAInterpreter):
             'bus1',
         )
         line_flow_data = NetworkLineFlowsData.from_nodal_net_injection(
-            node_a_net_injection=self.parent_dataset.fetch('branches.p0'),
-            node_b_net_injection=self.parent_dataset.fetch('branches.p1'),
+            node_a_net_injection=self.parent_dataset.fetch('branches_t.p0'),
+            node_b_net_injection=self.parent_dataset.fetch('branches_t.p1'),
         )
-        flow_calc.calculate(line_flow_data, 'sent', 'net')
-        pass
+        return flow_calc.calculate(line_flow_data, 'sent', 'net')
 
 
 if __name__ == '__main__':
