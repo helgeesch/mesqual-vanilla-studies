@@ -5,8 +5,7 @@
 
 ## Overview
 
-**MESQUAL** (**M**odular **E**nergy **S**cenario Comparison Library for **Q**uantitative and **Qual**itative Analysis
-) is a Python framework for post-processing and analyzing energy systems data from any platform, with a focus on multi-scenario processing, scenario comparison, KPI calculation, and plotly / folium (map) visualizations.  
+**MESQUAL** (**M**odular **E**nergy **S**cenario Comparison Library for **Q**uantitative and **Qual**itative Analysis) is a Python framework for post-processing and analyzing energy systems data from any platform, with a focus on multi-scenario processing, scenario comparison, KPI calculation, and plotly / folium (map) visualizations.  
 
 This vanilla studies repository demonstrates MESQUAL's capabilities through practical examples and serves as a template architecture for organizing energy modeling studies. 
 
