@@ -35,6 +35,5 @@ nav:
   - Notebook 302: notebooks/mesqual_302_segmented_colormap.ipynb
   - Notebook 303: notebooks/mesqual_303_folium_model_df_map.ipynb
   - Notebook 304: notebooks/mesqual_304_folium_area_kpi_map.ipynb
-#  - Notebook 304: notebooks/mesqual_304_simple_area_kpi_map.ipynb
   - Notebook 307: notebooks/mesqual_307_country_plotter_util.ipynb
   - Notebook 308: notebooks/mesqual_308_html_dashboards.ipynb
