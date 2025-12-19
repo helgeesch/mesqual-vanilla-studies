@@ -2,3 +2,17 @@
 pytest>=8.0.0
 nbclient>=0.8.0
 nbformat>=5.9.0
+mkdocs==1.6.1
+mkdocs-material
+mkdocs-jupyter
+mkdocs-section-index
+mkdocs-pymdownx-material-extras
+mkdocs-autorefs
+mkdocs-get-deps
+mkdocs-material-extensions
+mkdocs-monorepo-plugin
+mkdocstrings
+mkdocstrings[python]
+mkdocstrings-python
+pymdown-extensions
+dotenv

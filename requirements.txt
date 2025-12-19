@@ -16,3 +16,4 @@ Pint
 branca
 tqdm
 selenium
+captain-arro
