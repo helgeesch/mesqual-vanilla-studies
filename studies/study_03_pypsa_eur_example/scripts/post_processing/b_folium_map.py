@@ -1,5 +1,4 @@
-from mesqual import StudyManager, _kpis_deprecated
-from mesqual._kpis_deprecated import KPI
+from mesqual import StudyManager, kpis
 
 study: StudyManager
 (study, )
@@ -19,4 +18,3 @@ study: StudyManager
 # 3. Flows (all overlay = False)
 # None
 # all scens / scen changes
-
