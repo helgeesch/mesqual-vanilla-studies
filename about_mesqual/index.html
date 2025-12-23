@@ -1,0 +1,4221 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.mesqual.io/about_mesqual/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../about_vanilla_studies/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>About MESQUAL Framework - MESQUAL Suite Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mesqual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MESQUAL Suite Documentation" class="md-header__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MESQUAL Suite Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              About MESQUAL Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mesqual-package-documentation/api_reference/study_manager/" class="md-tabs__link">
+          
+  
+  
+  MESQUAL API Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mesqual-study-01/" class="md-tabs__link">
+          
+  
+  
+  Studies & Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MESQUAL Suite Documentation" class="md-nav__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-white.svg" alt="logo">
+
+    </a>
+    MESQUAL Suite Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MESQUAL Suite Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    About MESQUAL Framework
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    About MESQUAL Framework
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum usage examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum usage examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-pypsa-interface-to-set-up-a-study-with-multiple-scenarios-and-scenario-comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using PyPSA interface to set up a study with multiple scenarios and scenario comparisons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-using-plexos-interface-to-set-up-simple-dataset-and-fetch-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using Plexos interface to set up simple dataset and fetch data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage-building-platform-interfaces-and-study-specific-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage: Building Platform Interfaces and Study-Specific Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage: Building Platform Interfaces and Study-Specific Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-building-a-platform-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Building a Platform Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-platform-generic-interpreters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Platform-Generic Interpreters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-study-specific-interpreters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Study-Specific Interpreters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Study-Specific Interpreters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-a-adding-new-model-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern A: Adding New Model Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-b-enriching-existing-model-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern B: Enriching Existing Model Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-c-computing-custom-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern C: Computing Custom Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creating-study-specific-dataset-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Creating Study-Specific Dataset Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-setting-up-studymanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Setting Up StudyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-complete-analysis-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Complete Analysis Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-architecture-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Architecture Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-integrate-mesqual-and-mesqual-interface-packages-in-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started: Integrate mesqual and mesqual-interface packages in your project
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started: Integrate mesqual and mesqual-interface packages in your project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-install-from-git-easy-for-consumers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Install from Git (easy for consumers)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-local-dev-with-submodules-for-active-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Local dev with submodules (for active development)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Local dev with submodules (for active development)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-submodules-under-your-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Add submodules under your repo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-in-editable-mode-so-that-any-code-changes-just-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Install in editable mode so that any code changes “just work”:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-optional-ide-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 (optional): IDE tip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution-and-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribution and Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attribution and Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#third-party-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-party assets:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_vanilla_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Vanilla Studies Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MESQUAL API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/study_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StudyManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datasets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Flag System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Flag System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/flag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/flag_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FlagIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/kpis/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    KPIs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            KPIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Core Classes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Core Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/kpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI & Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/aggregations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/kpis/builders/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Builders
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Builders
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/builders/flag_agg_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Agg Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/builders/comparison_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/builders/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Builder Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/kpis/definitions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Definitions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/definitions/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Definition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/definitions/flag_aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/definitions/comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/kpis/definitions/custom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/visualization/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Visualization Modules
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TimeSeriesDashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Folium Viz System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Folium Viz System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/circle_marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circle Marker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/line_text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Line Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/arrow_icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrow Icon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2_7" id="__nav_2_3_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abstract System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/data_item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/kpi_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI Collection Visualizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/folium_viz_system/legends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legends
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/html_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/visualization/html_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/energy_data_handling/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Energy Data Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Energy Data Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Area Accounting
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Area Accounting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/model_gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area / Border Model Generators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/area_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/border_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Border Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Model Membership Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Model Membership Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/property_enricher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Property Enricher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/pairs_appender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pairs Appender
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Variable Utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Variable Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/in_common_aggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    In-common Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/direction_aggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Up-/Down Directional Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/congestion_rent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Congestion Rent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/regional_trade_balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regional Trade Balance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/granularity_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Granularity Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/network_lines_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Lines Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/energy_data_handling/time_series_gap_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Series Gap Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    pandas_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            pandas_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/flatten_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flatten DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/pend_props/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pend Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filter by Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/xs_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xs DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/sort_multiindex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sort MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/merge_multi_index_levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Merge MultiIndex Levels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/set_new_column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set New Column in MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/pandas_utils/combine_dfs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Combine DFs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/utils/plotly_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    plotly_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            plotly_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/plotly_utils/plotly_theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PlotlyTheme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/plotly_utils/figure_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    figure_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/plotly_utils/px_category_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    px_category_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-package-documentation/api_reference/utils/folium_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    folium_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            folium_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-package-documentation/api_reference/utils/folium_utils/screenshotter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Screenshotter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Studies & Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Studies & Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mesqual-study-01/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Intro to MESQUAL
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Intro to MESQUAL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_101_study_manager_and_basic_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 101: StudyManager and Dataset Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_102_mastering_data_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 102: Advanced Data Fetching Techniques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_103_scenario_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 103: Scenario Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_201_kpi_framework_and_units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 201: KPI Framework and Unit Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_202_kpi_collections_and_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 202: KPI Collections and Pretty Tables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_301_time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 301: Time Series Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_302_segmented_colormap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 302: Segmented Colormap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_303_folium_model_df_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 401: Folium Model Data Visualization - Areas, Points, and Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_304_folium_area_kpi_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 304: Folium KPI Visualization System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_307_country_plotter_util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 307: Country Plotter Utility Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesqual-study-01/notebooks/mesqual_308_html_dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 305: HTML Dashboard Utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum usage examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum usage examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-pypsa-interface-to-set-up-a-study-with-multiple-scenarios-and-scenario-comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using PyPSA interface to set up a study with multiple scenarios and scenario comparisons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-using-plexos-interface-to-set-up-simple-dataset-and-fetch-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using Plexos interface to set up simple dataset and fetch data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage-building-platform-interfaces-and-study-specific-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage: Building Platform Interfaces and Study-Specific Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage: Building Platform Interfaces and Study-Specific Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-building-a-platform-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Building a Platform Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-platform-generic-interpreters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Platform-Generic Interpreters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-study-specific-interpreters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Study-Specific Interpreters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Study-Specific Interpreters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-a-adding-new-model-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern A: Adding New Model Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-b-enriching-existing-model-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern B: Enriching Existing Model Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-c-computing-custom-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern C: Computing Custom Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creating-study-specific-dataset-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Creating Study-Specific Dataset Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-setting-up-studymanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Setting Up StudyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-complete-analysis-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Complete Analysis Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-architecture-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Architecture Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-integrate-mesqual-and-mesqual-interface-packages-in-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started: Integrate mesqual and mesqual-interface packages in your project
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started: Integrate mesqual and mesqual-interface packages in your project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-install-from-git-easy-for-consumers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Install from Git (easy for consumers)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-local-dev-with-submodules-for-active-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Local dev with submodules (for active development)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Local dev with submodules (for active development)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-submodules-under-your-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Add submodules under your repo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-in-editable-mode-so-that-any-code-changes-just-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Install in editable mode so that any code changes “just work”:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-optional-ide-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 (optional): IDE tip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution-and-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribution and Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attribution and Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#third-party-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-party assets:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a href="https://www.python.org/downloads/release/python-3100/"><img alt="Python &gt;=3.10" src="https://img.shields.io/badge/python-≥3.10-blue.svg" /></a>
+<a href="https://www.gnu.org/licenses/lgpl-3.0"><img alt="License: LGPL v3" src="https://img.shields.io/badge/License-LGPL%20v3-blue.svg" /></a>
+<img alt="Notebook Tests" src="https://github.com/helgeesch/mesqual/actions/workflows/test-with-vanilla-studies.yml/badge.svg" /></p>
+<h1 id="mesqual"><img src="https://raw.githubusercontent.com/helgeesch/mesqual/18fe3fc20bace115a116555b2872d57925698e48/assets/logo-turq.svg" width="30" height="30" alt="logo"> MESQUAL<a class="headerlink" href="#mesqual" title="Permanent link">&para;</a></h1>
+<p><strong>M</strong>odular <strong>E</strong>nergy <strong>S</strong>cenario Comparison Library for <strong>Qu</strong>antitative and <strong>Qu</strong>alitative An<strong>al</strong>ysis</p>
+<p>A modular Python framework for energy market data analysis, with a focus on scenario comparison, KPI calculation and interactive visualizations.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>MESQUAL is a <strong>platform-agnostic</strong> Python framework for multi-scenario energy systems analysis. It provides a unified data access layer, automatic scenario comparison, and comprehensive visualization capabilities that work seamlessly across any energy modeling platform (PyPSA, PLEXOS, SimFa, etc.) or custom data sources.</p>
+<h3 id="core-philosophy">Core Philosophy<a class="headerlink" href="#core-philosophy" title="Permanent link">&para;</a></h3>
+<p>MESQUAL follows a three-tier code organization principle:</p>
+<ul>
+<li><strong>General code</strong> (mesqual): Platform-agnostic framework available in all studies</li>
+<li><strong>Platform-specific code</strong> (mesqual-pypsa, mesqual-plexos, etc.): Platform interfaces and interpreters</li>
+<li><strong>Study-specific code</strong> (your-study-repo): Custom variables, analysis logic, and workflows</li>
+</ul>
+<h3 id="key-capabilities">Key Capabilities<a class="headerlink" href="#key-capabilities" title="Permanent link">&para;</a></h3>
+<p><strong>🎯 Unified Data Access</strong></p>
+<ul>
+<li>Single <code>.fetch(flag)</code> interface across all platforms and data types</li>
+<li>Consistent API for model data, time series, and computed metrics</li>
+<li>Automatic MultiIndex handling for multi-scenario and comparison analysis</li>
+</ul>
+<p><strong>📊 Multi-Scenario Management</strong></p>
+<ul>
+<li>Three-tier collection system (<code>.scen</code>, <code>.comp</code>, <code>.scen_comp</code>)</li>
+<li>Automatic delta computation between scenarios (and other types of comparisons)</li>
+<li>Unified access to scenarios and comparisons with type distinction</li>
+</ul>
+<p><strong>🔧 Extensible Architecture</strong></p>
+<ul>
+<li>Registry-based flag system with metadata management</li>
+<li>Custom interpreter registration for study-specific variables</li>
+<li>Platform interfaces enable integration with any energy modeling tool</li>
+</ul>
+<p><strong>🗺️ Rich Visualization System</strong></p>
+<ul>
+<li>Interactive Folium maps with automatic feature generation</li>
+<li>PropertyMapper system for data-driven styling</li>
+<li>KPI collection visualizers with filtering and grouping</li>
+<li>Time series dashboards and HTML reports</li>
+</ul>
+<p><strong>⚡ Energy-Specific Tools</strong></p>
+<ul>
+<li>Area-level accounting for topological aggregation</li>
+<li>Network flow analysis and capacity modeling</li>
+<li>Volume-weighted price aggregation</li>
+<li>Time series granularity conversion and gap handling</li>
+</ul>
+<p><strong>📈 Advanced KPI Framework</strong></p>
+<ul>
+<li>Optional KPI system with model object integration</li>
+<li>Folium visualization integration with geographic context</li>
+<li>Unit handling and automatic conversion</li>
+<li>Multi-scenario bulk computation with progress tracking</li>
+<li>Note: For quick analysis, direct pandas processing is often faster</li>
+</ul>
+<p><strong>🛠️ Comprehensive Utilities</strong></p>
+<ul>
+<li>Pandas utilities for MultiIndex operations and filtering</li>
+<li>Folium helpers like automatic screenshotting tools</li>
+<li>Plotly theme system and visualization helpers</li>
+<li>Color scales and mapping systems</li>
+<li>Geographic and spatial analysis tools</li>
+</ul>
+<p>This is the foundation package for a whole suite of libraries and repositories. 
+In most cases, you will want to combine this foundation package with at least one existing mesqual-platform-interface (e.g. mesqual-pypsa, mesqual-plexos, ...), or build your own.</p>
+<p>To view a hands-on repository and see how the MESQUAL-suite is used in action, please visit the vanilla-studies repository. For platform-interfaces, visit those, respectively. The full list of the current MESQUAL-suite is:</p>
+<ul>
+<li><a href="https://github.com/helgeesch/mesqual">mesqual</a></li>
+<li><a href="https://github.com/helgeesch/mesqual-vanilla-studies">mesqual-vanilla-studies</a></li>
+<li><a href="https://github.com/helgeesch/mesqual-pypsa">mesqual-pypsa</a></li>
+<li><a href="https://github.com/helgeesch/mesqual-plexos">mesqual-plexos</a> (requires access)</li>
+</ul>
+<hr />
+<h2 id="minimum-usage-examples">Minimum usage examples<a class="headerlink" href="#minimum-usage-examples" title="Permanent link">&para;</a></h2>
+<h4 id="example-using-pypsa-interface-to-set-up-a-study-with-multiple-scenarios-and-scenario-comparisons">Example using PyPSA interface to set up a study with multiple scenarios and scenario comparisons<a class="headerlink" href="#example-using-pypsa-interface-to-set-up-a-study-with-multiple-scenarios-and-scenario-comparisons" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual</span><span class="w"> </span><span class="kn">import</span> <span class="n">StudyManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSADataset</span>
+
+<span class="c1"># Load networks</span>
+<span class="n">n_base</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;your_base_network.nc&#39;</span><span class="p">)</span>
+<span class="n">n_scen1</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;your_scen1_network.nc&#39;</span><span class="p">)</span>
+<span class="n">n_scen2</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;your_scen2_network.nc&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize study manager</span>
+<span class="n">study</span> <span class="o">=</span> <span class="n">StudyManager</span><span class="o">.</span><span class="n">factory_from_scenarios</span><span class="p">(</span>
+    <span class="n">scenarios</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">PyPSADataset</span><span class="p">(</span><span class="n">n_base</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">),</span>
+        <span class="n">PyPSADataset</span><span class="p">(</span><span class="n">n_scen1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;scen1&#39;</span><span class="p">),</span>
+        <span class="n">PyPSADataset</span><span class="p">(</span><span class="n">n_scen2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;scen2&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">comparisons</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;scen1&quot;</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;scen2&quot;</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">)],</span>
+    <span class="n">export_folder</span><span class="o">=</span><span class="s2">&quot;output&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Access MultiIndex df with data for all scenarios</span>
+<span class="n">df_prices</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;buses_t.marginal_price&quot;</span><span class="p">)</span>
+
+<span class="c1"># Access MultiIndex df with data for all comparisons (delta values)</span>
+<span class="n">df_price_deltas</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;buses_t.marginal_price&quot;</span><span class="p">)</span>
+
+<span class="c1"># Access buses model df of base case</span>
+<span class="n">df_bus_model</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="example-using-plexos-interface-to-set-up-simple-dataset-and-fetch-data">Example using Plexos interface to set up simple dataset and fetch data<a class="headerlink" href="#example-using-plexos-interface-to-set-up-simple-dataset-and-fetch-data" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_plexos</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlexosDataset</span>
+
+<span class="c1"># Initialize dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">PlexosDataset</span><span class="o">.</span><span class="n">from_xml_and_solution_zip</span><span class="p">(</span>
+   <span class="n">model</span><span class="o">=</span><span class="s1">&#39;path/to/my_plexos_model.xml&#39;</span><span class="p">,</span> 
+   <span class="n">solution</span><span class="o">=</span><span class="s1">&#39;path/to/my_plexos_solution.zip&#39;</span><span class="p">,</span>
+   <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_name&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Fetch data as DataFrame</span>
+<span class="n">df_prices</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;ST.Node.Price&quot;</span><span class="p">)</span>
+<span class="n">df_nodes</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;Node.Model&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>For more elaborate and practical examples, please visit the <a href="https://github.com/helgeesch/mesqual-vanilla-studies.git">mesqual-vanilla-studies</a> repository.</p>
+<hr />
+<h2 id="advanced-usage-building-platform-interfaces-and-study-specific-extensions">Advanced Usage: Building Platform Interfaces and Study-Specific Extensions<a class="headerlink" href="#advanced-usage-building-platform-interfaces-and-study-specific-extensions" title="Permanent link">&para;</a></h2>
+<p>MESQUAL's power comes from its layered architecture that separates platform-generic code, platform-specific code, and study-specific code. Here's how to extend MESQUAL for your platform and studies.</p>
+<h3 id="1-building-a-platform-dataset">1. Building a Platform Dataset<a class="headerlink" href="#1-building-a-platform-dataset" title="Permanent link">&para;</a></h3>
+<p>Platform datasets extend <code>PlatformDataset</code> with platform-specific data access. Here's how mesqual-pypsa implements it:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># mesqual_pypsa/pypsa_dataset.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pypsa</span><span class="w"> </span><span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlatformDataset</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PyPSADataset</span><span class="p">(</span><span class="n">PlatformDataset</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span> <span class="ow">or</span> <span class="n">network</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">flag_index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_flag_index_type</span><span class="p">()(</span><span class="bp">self</span><span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">network</span>  <span class="c1"># Store PyPSA network</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_flag_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">str</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_flag_index_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">[</span><span class="n">PyPSAFlagIndex</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">PyPSAFlagIndex</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_register_core_interpreters</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.network_interpreters.model</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSAModelInterpreter</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.network_interpreters.time_series</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSATimeSeriesInterpreter</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">register_interpreter</span><span class="p">(</span><span class="n">PyPSAModelInterpreter</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">register_interpreter</span><span class="p">(</span><span class="n">PyPSATimeSeriesInterpreter</span><span class="p">)</span>
+
+<span class="c1"># Register platform interpreters</span>
+<span class="n">PyPSADataset</span><span class="o">.</span><span class="n">_register_core_interpreters</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="2-platform-generic-interpreters">2. Platform-Generic Interpreters<a class="headerlink" href="#2-platform-generic-interpreters" title="Permanent link">&para;</a></h3>
+<p>Interpreters define how to fetch specific flags from the platform. Each platform has its own interpreter base class:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: PyPSA Model Interpreter (platform-generic)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.network_interpreters.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSAInterpreter</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PyPSAModelInterpreter</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="c1"># Accepts any PyPSA component model flags</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses&#39;</span><span class="p">,</span> <span class="s1">&#39;generators&#39;</span><span class="p">,</span> <span class="s1">&#39;loads&#39;</span><span class="p">,</span> <span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="s1">&#39;links&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Access PyPSA network via parent dataset</span>
+        <span class="n">network</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">n</span>
+
+        <span class="c1"># Return the component DataFrame</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="3-study-specific-interpreters">3. Study-Specific Interpreters<a class="headerlink" href="#3-study-specific-interpreters" title="Permanent link">&para;</a></h3>
+<p>Studies can add custom interpreters for study-specific data or calculations. There are two main patterns:</p>
+<h4 id="pattern-a-adding-new-model-data">Pattern A: Adding New Model Data<a class="headerlink" href="#pattern-a-adding-new-model-data" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># studies/study_01_intro_to_mesqual/src/study_specific_model_interpreters.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.network_interpreters.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSAInterpreter</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ControlAreaModelInterpreter</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provides control area geographic data (study-specific).&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;control_areas&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+        <span class="c1"># Load study-specific geospatial data</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;data/DE_control_areas.geojson&#39;</span><span class="p">)</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;control_area&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gdf</span>
+</code></pre></div>
+<h4 id="pattern-b-enriching-existing-model-data">Pattern B: Enriching Existing Model Data<a class="headerlink" href="#pattern-b-enriching-existing-model-data" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ScigridDEBusModelInterpreter</span><span class="p">(</span><span class="n">PyPSAModelInterpreter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extends platform bus model with control area membership.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;control_areas&#39;</span><span class="p">}</span>  <span class="c1"># Needs control area data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Get base bus data from platform interpreter</span>
+        <span class="n">df_buses</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_fetch</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Fetch control area geodata</span>
+        <span class="n">df_control_areas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;control_areas&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Spatial join to assign buses to control areas</span>
+        <span class="n">df_buses</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df_buses</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;location&#39;</span><span class="p">)</span>
+        <span class="n">sjoined</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">df_buses</span><span class="p">,</span> <span class="n">df_control_areas</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="s1">&#39;within&#39;</span><span class="p">)</span>
+        <span class="n">df_buses</span><span class="p">[</span><span class="s1">&#39;control_area&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sjoined</span><span class="p">[</span><span class="s1">&#39;control_area&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">df_buses</span>
+</code></pre></div>
+<h4 id="pattern-c-computing-custom-variables">Pattern C: Computing Custom Variables<a class="headerlink" href="#pattern-c-computing-custom-variables" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># studies/study_01_intro_to_mesqual/src/study_specific_variable_interpreters.py</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ControlAreaVolWeightedPrice</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates demand volume-weighted price per control area.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;control_areas_t.vol_weighted_marginal_price&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">,</span> <span class="s1">&#39;loads_t.p&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Fetch required data</span>
+        <span class="n">price_per_bus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">)</span>
+        <span class="n">load_per_load</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;loads_t.p&#39;</span><span class="p">)</span>
+        <span class="n">bus_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+        <span class="n">load_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;loads&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Aggregate loads to bus level</span>
+        <span class="n">load_per_bus</span> <span class="o">=</span> <span class="n">prepend_model_prop_levels</span><span class="p">(</span><span class="n">load_per_load</span><span class="p">,</span> <span class="n">load_model</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">)</span>
+        <span class="n">load_per_bus</span> <span class="o">=</span> <span class="n">load_per_bus</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;bus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="c1"># Aggregate to control area level</span>
+        <span class="n">load_per_ca</span> <span class="o">=</span> <span class="n">prepend_model_prop_levels</span><span class="p">(</span><span class="n">load_per_bus</span><span class="p">,</span> <span class="n">bus_model</span><span class="p">,</span> <span class="s1">&#39;control_area&#39;</span><span class="p">)</span>
+        <span class="n">load_per_ca</span> <span class="o">=</span> <span class="n">load_per_ca</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;control_area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="c1"># Calculate volume-weighted prices</span>
+        <span class="n">price_load</span> <span class="o">=</span> <span class="n">price_per_bus</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">load_per_bus</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">price_load_per_ca</span> <span class="o">=</span> <span class="n">prepend_model_prop_levels</span><span class="p">(</span><span class="n">price_load</span><span class="p">,</span> <span class="n">bus_model</span><span class="p">,</span> <span class="s1">&#39;control_area&#39;</span><span class="p">)</span>
+        <span class="n">price_load_per_ca</span> <span class="o">=</span> <span class="n">price_load_per_ca</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;control_area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="n">vol_weighted_price</span> <span class="o">=</span> <span class="n">price_load_per_ca</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">load_per_ca</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">vol_weighted_price</span>
+</code></pre></div>
+<h3 id="4-creating-study-specific-dataset-class">4. Creating Study-Specific Dataset Class<a class="headerlink" href="#4-creating-study-specific-dataset-class" title="Permanent link">&para;</a></h3>
+<p>Combine platform dataset with study interpreters:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># studies/study_01_intro_to_mesqual/scripts/setup_study_manager.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSADataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">studies.study_01_intro_to_mesqual.src.study_specific_model_interpreters</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ControlAreaModelInterpreter</span><span class="p">,</span>
+    <span class="n">ScigridDEBusModelInterpreter</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">studies.study_01_intro_to_mesqual.src.study_specific_variable_interpreters</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ControlAreaVolWeightedPrice</span>
+<span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ScigridDEDataset</span><span class="p">(</span><span class="n">PyPSADataset</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Study-specific dataset with control area support.&quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_register_core_interpreters</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="c1"># Register study-specific interpreters</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">register_interpreter</span><span class="p">(</span><span class="n">ControlAreaModelInterpreter</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">register_interpreter</span><span class="p">(</span><span class="n">ScigridDEBusModelInterpreter</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">register_interpreter</span><span class="p">(</span><span class="n">ControlAreaVolWeightedPrice</span><span class="p">)</span>
+
+<span class="c1"># Register interpreters</span>
+<span class="n">ScigridDEDataset</span><span class="o">.</span><span class="n">_register_core_interpreters</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="5-setting-up-studymanager">5. Setting Up StudyManager<a class="headerlink" href="#5-setting-up-studymanager" title="Permanent link">&para;</a></h3>
+<p>Create a StudyManager with multiple scenarios and comparisons:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual</span><span class="w"> </span><span class="kn">import</span> <span class="n">StudyManager</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_study_manager</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">StudyManager</span><span class="p">:</span>
+    <span class="c1"># Load PyPSA networks</span>
+    <span class="n">n_base</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;data/networks/base.nc&#39;</span><span class="p">)</span>
+    <span class="n">n_wind_150</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;data/networks/wind_150.nc&#39;</span><span class="p">)</span>
+    <span class="n">n_solar_200</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="s1">&#39;data/networks/solar_200.nc&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Create study manager</span>
+    <span class="n">study</span> <span class="o">=</span> <span class="n">StudyManager</span><span class="o">.</span><span class="n">factory_from_scenarios</span><span class="p">(</span>
+        <span class="n">scenarios</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">ScigridDEDataset</span><span class="p">(</span><span class="n">n_base</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">),</span>
+            <span class="n">ScigridDEDataset</span><span class="p">(</span><span class="n">n_wind_150</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;wind_150&#39;</span><span class="p">),</span>
+            <span class="n">ScigridDEDataset</span><span class="p">(</span><span class="n">n_solar_200</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;solar_200&#39;</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">comparisons</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="s1">&#39;wind_150&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;solar_200&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">export_folder</span><span class="o">=</span><span class="s1">&#39;output/&#39;</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">study</span>
+</code></pre></div>
+<h3 id="6-complete-analysis-workflow">6. Complete Analysis Workflow<a class="headerlink" href="#6-complete-analysis-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize study</span>
+<span class="n">study</span> <span class="o">=</span> <span class="n">get_study_manager</span><span class="p">()</span>
+
+<span class="c1"># === Data Access ===</span>
+
+<span class="c1"># Fetch platform-generic data across all scenarios</span>
+<span class="n">bus_prices</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">)</span>  <span class="c1"># PyPSA time series</span>
+<span class="n">generators</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;generators&#39;</span><span class="p">)</span>  <span class="c1"># PyPSA model data</span>
+
+<span class="c1"># Fetch study-specific data</span>
+<span class="n">control_areas</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;control_areas&#39;</span><span class="p">)</span>  <span class="c1"># Study-specific GeoDataFrame</span>
+<span class="n">ca_prices</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;control_areas_t.vol_weighted_marginal_price&#39;</span><span class="p">)</span>  <span class="c1"># Computed</span>
+
+<span class="c1"># Fetch comparison deltas</span>
+<span class="n">price_changes</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">)</span>
+
+<span class="c1"># Individual dataset access</span>
+<span class="n">ds_base</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
+<span class="n">base_buses</span> <span class="o">=</span> <span class="n">ds_base</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>  <span class="c1"># Has &#39;control_area&#39; column from enrichment</span>
+
+<span class="c1"># === KPI Generation ===</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.kpis</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlagAggKPIBuilder</span><span class="p">,</span> <span class="n">Aggregations</span>
+
+<span class="c1"># Define KPIs</span>
+<span class="n">kpi_defs</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FlagAggKPIBuilder</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">for_flag</span><span class="p">(</span><span class="s1">&#39;control_areas_t.vol_weighted_marginal_price&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_aggregation</span><span class="p">(</span><span class="n">Aggregations</span><span class="o">.</span><span class="n">Mean</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="c1"># Add to all scenarios</span>
+<span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">add_kpis_from_definitions_to_all_child_datasets</span><span class="p">(</span><span class="n">kpi_defs</span><span class="p">)</span>
+
+<span class="c1"># Get KPI collection</span>
+<span class="n">kpi_collection</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">scen</span><span class="o">.</span><span class="n">get_merged_kpi_collection</span><span class="p">()</span>
+
+<span class="c1"># === Visualization ===</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.visualizations</span><span class="w"> </span><span class="kn">import</span> <span class="n">folium_viz_system</span> <span class="k">as</span> <span class="n">folviz</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.visualizations</span><span class="w"> </span><span class="kn">import</span> <span class="n">value_mapping_system</span> <span class="k">as</span> <span class="n">valmap</span>
+
+<span class="c1"># Create colorscale</span>
+<span class="n">price_scale</span> <span class="o">=</span> <span class="n">valmap</span><span class="o">.</span><span class="n">SegmentedContinuousColorscale</span><span class="p">(</span>
+    <span class="n">segments</span><span class="o">=</span><span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;#2E86AB&#39;</span><span class="p">,</span> <span class="s1">&#39;#A23B72&#39;</span><span class="p">,</span> <span class="s1">&#39;#F18F01&#39;</span><span class="p">]}</span>
+<span class="p">)</span>
+
+<span class="c1"># Create map</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Visualize KPIs</span>
+<span class="n">visualizer</span> <span class="o">=</span> <span class="n">folviz</span><span class="o">.</span><span class="n">KPICollectionMapVisualizer</span><span class="p">(</span>
+    <span class="n">generators</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">folviz</span><span class="o">.</span><span class="n">AreaGenerator</span><span class="p">(</span>
+            <span class="n">folviz</span><span class="o">.</span><span class="n">AreaFeatureResolver</span><span class="p">(</span>
+                <span class="n">fill_color</span><span class="o">=</span><span class="n">folviz</span><span class="o">.</span><span class="n">PropertyMapper</span><span class="o">.</span><span class="n">from_kpi_value</span><span class="p">(</span><span class="n">price_scale</span><span class="p">),</span>
+                <span class="n">tooltip</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">price_kpis</span> <span class="o">=</span> <span class="n">kpi_collection</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="s1">&#39;control_areas_t.vol_weighted_marginal_price&#39;</span><span class="p">)</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">generate_and_add_feature_groups_to_map</span><span class="p">(</span><span class="n">price_kpis</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;output/price_map.html&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="key-architecture-principles">Key Architecture Principles<a class="headerlink" href="#key-architecture-principles" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Layered Responsibility</strong>:</p>
+</li>
+<li>
+<p>Platform dataset: Core data access from modeling tool</p>
+</li>
+<li>Platform interpreters: Generic data fetching for the platform</li>
+<li>
+<p>Study interpreters: Study-specific enrichments and calculations</p>
+</li>
+<li>
+<p><strong>Interpreter Inheritance</strong>:</p>
+</li>
+<li>
+<p>Study interpreters extend platform interpreter base</p>
+</li>
+<li>Can call <code>super()._fetch()</code> to build on platform data</li>
+<li>
+<p>Declare dependencies via <code>_required_flags_for_flag()</code></p>
+</li>
+<li>
+<p><strong>Flag Registration</strong>:</p>
+</li>
+<li>
+<p>Each interpreter declares <code>accepted_flags</code></p>
+</li>
+<li>StudyManager uses flag system to route fetch requests</li>
+<li>
+<p>Automatic dependency resolution</p>
+</li>
+<li>
+<p><strong>Extensibility</strong>:</p>
+</li>
+<li>
+<p>Add interpreters without modifying platform code</p>
+</li>
+<li>Study-specific logic stays in study repository</li>
+<li>Platform code remains generic and reusable</li>
+</ol>
+<hr />
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Python ≥ 3.10</li>
+<li>Install runtime dependencies with: <code>pip install -e .</code></li>
+</ul>
+<hr />
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>MESQUAL follows a modular design where platform-specific implementations are handled through separate packages:</p>
+<div class="highlight"><pre><span></span><code>mesqual/                         # Core package
+mesqual-pypsa/                   # PyPSA interface (separate package)
+mesqual-plexos/                  # PLEXOS interface (separate package)
+...                              # Other platform interfaces
+mesqual-your-custom-interface/   # Custom interface for your platform
+</code></pre></div>
+<p>The core package provides:</p>
+<ul>
+<li>Abstract interfaces for data handling</li>
+<li>Base classes for platform-specific implementations</li>
+<li>Scenario comparison tools</li>
+<li>KPI calculation framework</li>
+<li>Visualization modules</li>
+<li>Data transformation modules and utilities</li>
+<li>Pandas / Plotly / Folium utilities</li>
+</ul>
+<h2 id="getting-started-integrate-mesqual-and-mesqual-interface-packages-in-your-project">Getting Started: Integrate mesqual and mesqual-interface packages in your project<a class="headerlink" href="#getting-started-integrate-mesqual-and-mesqual-interface-packages-in-your-project" title="Permanent link">&para;</a></h2>
+<p>You have two ways to pull in the core library and any interfaces:</p>
+<h3 id="option-a-install-from-git-easy-for-consumers">Option A: Install from Git (easy for consumers)<a class="headerlink" href="#option-a-install-from-git-easy-for-consumers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/helgeesch/mesqual.git
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/path/to/any/mesqual-any-interface.git
+</code></pre></div>
+<h3 id="option-b-local-dev-with-submodules-for-active-development">Option B: Local dev with submodules (for active development)<a class="headerlink" href="#option-b-local-dev-with-submodules-for-active-development" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-add-submodules-under-your-repo">Step 1: Add submodules under your repo:<a class="headerlink" href="#step-1-add-submodules-under-your-repo" title="Permanent link">&para;</a></h4>
+<p>Add all required mesqual packages as submodules. If you want to build your own interface, just start by including the foundation package and start building your-custom-mesqual-interface. If you want to integrate an existing interface, just add that one as a submodule, respectively.
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/helgeesch/mesqual.git<span class="w"> </span>submodules/mesqual
+git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/path/to/any/mesqual-any-interface.git<span class="w"> </span>submodules/mesqual-any-interface
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</code></pre></div>
+The folder <code>submodules/</code> should now include the respective packages.</p>
+<h4 id="step-2-install-in-editable-mode-so-that-any-code-changes-just-work">Step 2: Install in editable mode so that any code changes “just work”:<a class="headerlink" href="#step-2-install-in-editable-mode-so-that-any-code-changes-just-work" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>./submodules/mesqual
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>./submodules/mesqual-any-interface
+</code></pre></div>
+<h4 id="step-3-optional-ide-tip">Step 3 (optional): IDE tip<a class="headerlink" href="#step-3-optional-ide-tip" title="Permanent link">&para;</a></h4>
+<p>If you want full autocomplete and go-to-definition in PyCharm/VS Code, mark submodules/mesqual (and any other submodule) as a Sources Root in your IDE. This is purely for dev comfort and won’t affect other users.</p>
+<h2 id="attribution-and-licenses">Attribution and Licenses<a class="headerlink" href="#attribution-and-licenses" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the LGPL License - see the LICENSE file for details.</p>
+<h3 id="third-party-assets">Third-party assets:<a class="headerlink" href="#third-party-assets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>countries.geojson</code>: Made with <a href="https://github.com/nvkelso/natural-earth-vector.git">Natural Earth</a></li>
+</ul>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p>For questions or feedback, don't hesitate to <a href="https://github.com/helgeesch/mesqual/issues">open an issue</a> or reach out via LinkedIn.</p>
+<p><a href="https://www.linkedin.com/in/helge-e-8201041a7/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&amp;logo=linkedin&amp;logoColor=white" /></a></p>
+<hr />
+<p>!!! info "Source Documentation"
+    The content above is pulled directly from the <a href="https://github.com/helgeesch/mesqual">MESQUAL core repository README</a>, ensuring you always have the most up-to-date information.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.tabs.link", "navigation.sections"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
