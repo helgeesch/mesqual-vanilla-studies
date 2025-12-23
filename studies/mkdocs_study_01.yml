@@ -26,6 +26,7 @@ plugins:
         - "*.py"
 
 nav:
+  - README.md
   - Notebook 101: notebooks/mesqual_101_study_manager_and_basic_fetching.ipynb
   - Notebook 102: notebooks/mesqual_102_mastering_data_fetching.ipynb
   - Notebook 103: notebooks/mesqual_103_scenario_attributes.ipynb

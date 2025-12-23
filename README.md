@@ -44,6 +44,7 @@ Beyond providing examples, this repository serves as a template architecture for
 ## Getting Started: Setting up the repo locally
 
 ### Prerequisites
+
 - Python ≥ 3.10
 - Git 
 - It is recommend to set up a virtual environment for this repository, but this is, of course, optional.
