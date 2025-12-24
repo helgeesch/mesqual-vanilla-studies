@@ -23,16 +23,16 @@ MESQUAL follows a three-tier code organization principle:
 
 ### 🔍 Explore the API
 
-- **[MESQUAL API Reference](mesqual/api_reference/study_manager/)** - Complete API documentation for the core package
-  - [StudyManager](mesqual/api_reference/study_manager/) - Central orchestrator for multi-scenario analysis
-  - [Datasets](mesqual/api_reference/datasets/) - Platform-agnostic data access layer
-  - [KPI System](mesqual/api_reference/kpis/) - Advanced KPI framework with model object integration
-  - [Visualization Modules](mesqual/api_reference/visualization/) - Folium maps, Plotly dashboards, and HTML reports
-  - [Energy Data Handling](mesqual/api_reference/energy_data_handling/) - Area accounting, network flows, and more
+- **[MESQUAL API Reference](mesqual-package-documentation/api_reference/study_manager/)** - Complete API documentation for the core package
+  - [StudyManager](mesqual-package-documentation/api_reference/study_manager/) - Central orchestrator for multi-scenario analysis
+  - [Datasets](mesqual-package-documentation/api_reference/datasets/) - Platform-agnostic data access layer
+  - [KPI System](mesqual-package-documentation/api_reference/kpis/) - Advanced KPI framework with model object integration
+  - [Visualization Modules](mesqual-package-documentation/api_reference/visualization/) - Folium maps, Plotly dashboards, and HTML reports
+  - [Energy Data Handling](mesqual-package-documentation/api_reference/energy_data_handling/) - Area accounting, network flows, and more
 
 ### 🎓 Hands-On Examples
 
-- **[Intro to MESQUAL](study_01_intro_to_mesqual/introduction/)** - Comprehensive tutorial series covering:
+- **[Intro to MESQUAL](mesqual-study-01//)** - Comprehensive tutorial series covering:
   - Data fetching and scenario comparison
   - KPI calculation and analysis
   - Interactive Folium map visualization
@@ -70,7 +70,7 @@ Install the core framework from Git:
 pip install git+https://github.com/helgeesch/mesqual.git
 ```
 
-Or for local development with the vanilla-studies repository:
+Or for local development with the vanilla-studies (or your-own-studies) repository:
 ```bash
 git clone https://github.com/helgeesch/mesqual-vanilla-studies.git
 cd mesqual-vanilla-studies
