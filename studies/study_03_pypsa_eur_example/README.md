@@ -1,3 +1,0 @@
-# study_02_pypsa_eur
-
-Stay tuned, coming soon...
