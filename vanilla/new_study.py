@@ -12,7 +12,7 @@ class StudyTemplateGenerator:
         study_name/
         ├── README.md
         ├── data/
-        ├── non_versioned/
+        ├── dvc/
         │   ├── _tmp/
         │   ├── docs/
         │   ├── input/

@@ -20,13 +20,13 @@ class StudyFolder(Enum):
     def get_path(self) -> str:
         paths = {
             StudyFolder.DATA: "data",
-            StudyFolder.TMP: "non_versioned/_tmp",
-            StudyFolder.DOCS: "non_versioned/docs",
-            StudyFolder.INPUT: "non_versioned/input",
-            StudyFolder.OUTPUT: "non_versioned/output",
-            StudyFolder.PRESENTATIONS: "non_versioned/presentations",
-            StudyFolder.RESOURCES: "non_versioned/resources",
-            StudyFolder.SIM_RUNS: "non_versioned/sim_runs",
+            StudyFolder.TMP: "dvc/_tmp",
+            StudyFolder.DOCS: "dvc/docs",
+            StudyFolder.INPUT: "dvc/input",
+            StudyFolder.OUTPUT: "dvc/output",
+            StudyFolder.PRESENTATIONS: "dvc/presentations",
+            StudyFolder.RESOURCES: "dvc/resources",
+            StudyFolder.SIM_RUNS: "dvc/sim_runs",
             StudyFolder.NOTEBOOKS: "notebooks",
             StudyFolder.SCRIPTS: "scripts",
             StudyFolder.SRC: "src"

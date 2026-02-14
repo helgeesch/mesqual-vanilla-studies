@@ -51,7 +51,7 @@ def get_scigrid_de_study_manager() -> StudyManager:
             for f in network_files
         ],
         comparisons=[(_get_name_from_path(f), 'base') for f in network_files if not f.endswith('base.nc')],
-        export_folder=os.path.join(study_folder, 'non_versioned/output'),
+        export_folder=os.path.join(study_folder, 'dvc/output'),
     )
     return study_manager
 
