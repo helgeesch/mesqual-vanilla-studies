@@ -15,9 +15,13 @@ theme:
     - navigation.sections
 
 markdown_extensions:
+  - attr_list
   - toc:
       permalink: true
       toc_depth: 5
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.snippets:
@@ -64,9 +68,8 @@ nav:
     - About Vanilla Studies Repository: about_vanilla_studies.md
   - MESQUAL API Reference: '!include submodules/mesqual/mkdocs.yml'
   #  - MESQUAL PYPSA: '!include submodules/mesqual-pypsa/mkdocs.yml'
-  #  - MESQUAL AGENTS: '!include submodules/mesqual-agents/mkdocs.yml'
-  #  - MESQUAL MCP: '!include submodules/mesqual-mcp/mkdocs.yml'
+  #  - MESQUAL AI: '!include submodules/mesqual-ai/mkdocs.yml'
   - Studies & Examples:
       - Intro to MESQUAL: '!include studies/mkdocs_study_01.yml'
-  #      - Plexos Example: '!include studies/mkdocs_study_02.yml'
-  #      - PyPSA EUR Example: '!include studies/mkdocs_study_03.yml'
+      - PyPSA EUR Example: '!include studies/mkdocs_study_02.yml'
+      - Plexos Example: '!include studies/mkdocs_study_03.yml'

@@ -1,0 +1,19 @@
+site_name: 'mesqual study_03'
+
+docs_dir: ./study_03_plexos_example
+
+theme:
+  name: material
+  palette:
+    primary: 'teal'
+    accent: 'amber'
+  features:
+    - navigation.tabs
+    - content.tabs.link
+
+plugins:
+  - search
+  - monorepo
+
+nav:
+  - README.md

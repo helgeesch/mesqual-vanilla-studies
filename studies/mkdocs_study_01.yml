@@ -27,14 +27,17 @@ plugins:
 
 nav:
   - README.md
-  - Notebook 101: notebooks/mesqual_101_study_manager_and_basic_fetching.ipynb
-  - Notebook 102: notebooks/mesqual_102_mastering_data_fetching.ipynb
-  - Notebook 103: notebooks/mesqual_103_scenario_attributes.ipynb
-  - Notebook 201: notebooks/mesqual_201_kpi_framework_and_units.ipynb
-  - Notebook 202: notebooks/mesqual_202_kpi_collections_and_tables.ipynb
-  - Notebook 301: notebooks/mesqual_301_time_series_dashboard.ipynb
-  - Notebook 302: notebooks/mesqual_302_segmented_colormap.ipynb
-  - Notebook 303: notebooks/mesqual_303_folium_model_df_map.ipynb
-  - Notebook 304: notebooks/mesqual_304_folium_area_kpi_map.ipynb
-  - Notebook 307: notebooks/mesqual_307_country_plotter_util.ipynb
-  - Notebook 308: notebooks/mesqual_308_html_dashboards.ipynb
+  - Getting Started:
+    - Notebook 101: notebooks/mesqual_101_study_manager_and_basic_fetching.ipynb
+    - Notebook 102: notebooks/mesqual_102_mastering_data_fetching.ipynb
+    - Notebook 103: notebooks/mesqual_103_scenario_attributes.ipynb
+  - KPI Framework:
+    - Notebook 201: notebooks/mesqual_201_kpi_framework_and_units.ipynb
+    - Notebook 202: notebooks/mesqual_202_kpi_collections_and_tables.ipynb
+  - Visualization:
+    - Notebook 301: notebooks/mesqual_301_time_series_dashboard.ipynb
+    - Notebook 302: notebooks/mesqual_302_segmented_colormap.ipynb
+    - Notebook 303: notebooks/mesqual_303_folium_model_df_map.ipynb
+    - Notebook 304: notebooks/mesqual_304_folium_area_kpi_map.ipynb
+    - Notebook 307: notebooks/mesqual_307_country_plotter_util.ipynb
+    - Notebook 308: notebooks/mesqual_308_html_dashboards.ipynb

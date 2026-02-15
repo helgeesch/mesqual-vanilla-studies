@@ -1,25 +1,29 @@
-if __name__ == '__main__':
-    import pandas as pd
-    import plotly.express as px
+from pathlib import Path
 
-    from mesqual import StudyManager
-    from mesqual.utils.pandas_utils import flatten_df
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 
-    from studies.study_02_pypsa_eur_example.src.config import STUDY_FOLDER
+from mesqual import StudyManager
+from mesqual.utils.pandas_utils import flatten_df
 
-    study: StudyManager
-    (study, )
 
-    output_folder = STUDY_FOLDER.joinpath('dvc/output/figs_trade_balance/country_line_ts')
-    output_folder.mkdir(parents=True, exist_ok=True)
+class TradeBalanceLineFigGenerator:
+    def __init__(self, study_manager: StudyManager):
+        self._study = study_manager
 
-    data = study.scen.fetch('countries_t.trade_balance_per_partner') / 1e3
-    data = data.xs('net_exp', level='variable', axis=1)
-    data = flatten_df(data)
-    countries = data['primary_country'].unique()
-    countries = ['BE']  # demo only
+    def save_figs(self, folder: Path):
+        data = self._study.scen.fetch('countries_t.trade_balance_per_partner') / 1e3
+        data = data.xs('net_exp', level='variable', axis=1)
+        data = flatten_df(data)
+        countries = data['primary_country'].unique()
+        countries = ['BE']  # demo only
 
-    for country in countries:
+        for country in countries:
+            fig = self._create_figure(data, country)
+            fig.write_html(folder.joinpath(f'{country}_trade_bal_line_ts.html'))
+
+    def _create_figure(self, data: pd.DataFrame, country: str) -> go.Figure:
         fig = px.line(
             data[data['primary_country'] == country],
             x='snapshot',
@@ -48,4 +52,17 @@ if __name__ == '__main__':
                 type="date"
             )
         )
-        fig.write_html(output_folder.joinpath(f'{country}_trade_bal_line_ts.html'))
+        return fig
+
+
+if __name__ == '__main__':
+    from studies.study_02_pypsa_eur_example.src.config import STUDY_FOLDER
+
+    study: StudyManager
+    (study, )
+
+    output_folder = STUDY_FOLDER.joinpath('dvc/output/figs_trade_balance/country_line_ts')
+    output_folder.mkdir(parents=True, exist_ok=True)
+
+    generator = TradeBalanceLineFigGenerator(study)
+    generator.save_figs(output_folder)

@@ -1,0 +1,30 @@
+site_name: 'mesqual study_02'
+
+docs_dir: ./study_02_pypsa_eur_example
+
+theme:
+  name: material
+  palette:
+    primary: 'teal'
+    accent: 'amber'
+  features:
+    - navigation.tabs
+    - content.tabs.link
+
+plugins:
+  - search
+  - monorepo
+
+nav:
+  - README.md
+  - Scripts:
+    - Study Setup: docs/scripts/a_study_setup.md
+    - Simple Fetch: docs/scripts/b_simple_fetch.md
+    - Trade Balance Heatmap Dashboard: docs/scripts/c_trade_balance_heatmap_dashboard.md
+    - Trade Balance Line Chart: docs/scripts/c_trade_balance_line_fig.md
+    - Net Position & Price Map: docs/scripts/d_netpos_price_map.md
+  - Source:
+    - Config: docs/src/config.md
+    - Study Dataset: docs/src/study_dataset.md
+    - Study Database: docs/src/study_database.md
+    - Study Interpreters: docs/src/study_interpreters.md
