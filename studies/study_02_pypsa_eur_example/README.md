@@ -1,4 +1,4 @@
-# Study 04 — PyPSA-Eur Example
+# Study 02 — PyPSA-Eur Example
 
 This study demonstrates a typical MESQUAL workflow using three PyPSA-Eur network scenarios (`base`, `high_res`, `low_res`). It serves as a reference for how studies are structured in practice.
 
@@ -38,3 +38,10 @@ Each script is independent — you can run them in any order after the setup scr
 
 - `dvc/networks/` — PyPSA network files (`base.nc`, `high_res.nc`, `low_res.nc`)
 - `dvc/output/` — Exported results, figures, and HTML dashboards
+
+## Data Sources
+
+The network scenarios used in this study are built with [PyPSA-Eur](https://github.com/pypsa/pypsa-eur) and [Open-TYNDP](https://github.com/open-energy-transition/open-tyndp).
+
+- T. Brown et al., *PyPSA-Eur: An open sector-coupled optimisation model of the European energy system* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15864616.svg)](https://doi.org/10.5281/zenodo.15864616)
+- Open Energy Transition, *Open-TYNDP: Interfacing open energy system planning with ENTSO-E models and contributing to TYNDP* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18494363.svg)](https://doi.org/10.5281/zenodo.18494363)

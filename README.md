@@ -20,11 +20,15 @@ Visit the foundation package's README to find out more about the the [MESQUAL va
 Here is a list of all studies and examples currently part of the mesqual-vanilla-studies repo.
 
 ### Study 01: Intro to MESQUAL ([link](studies/study_01_intro_to_mesqual))
-The intro study primarily uses a PyPSA example network to introduce the MESQUAL modules and framework. Click on the title of the study to see the full overview.
+The intro study primarily uses a PyPSA example network to introduce the MESQUAL modules and framework. 
+Click on the title of the study to see the full overview.
 
-### Study 02: Plexos Example ([link](studies/study_02_plexos_example))
-This study demonstrates how to use MESQUAL with Plexos simulation outputs, showing the platform-agnostic nature of the framework. 
-It includes examples of loading PLEXOS data, performing common analyses, and visualizing results using the same patterns established in Study 01.
+### Study 02: PyPSA EUR example ([link](studies/study_02_pypsa_eur_example))
+This study demonstrates a typical MESQUAL workflow using three PyPSA-Eur network scenarios (`base`, `high_res`, `low_res`). 
+It serves as a reference for how studies are structured in practice and how the MESQUAL APIs and modules are used in daily workflows.
+
+### Study 03: Plexos Example ([link](studies/study_03_plexos_example))
+This study demonstrates how to use MESQUAL with Plexos simulation outputs, showing the platform-agnostic nature of the framework.
 
 ---
 
@@ -109,7 +113,11 @@ This project is primarily licensed under the LGPL License - see the LICENSE file
 - PyPSA and Scigrid-DE example network: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14824654.svg)](https://doi.org/10.5281/zenodo.14824654) - [MIT License]
 - GeoJSON of DE control areas: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7530196.svg)](https://doi.org/10.5281/zenodo.7530196) - [CC BY 4.0]
 
-The example notebooks use these assets for demonstration purposes.
+### Energy system models used in example studies:
+- [PyPSA-Eur](https://github.com/pypsa/pypsa-eur) — An open sector-coupled optimisation model of the European energy system [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15864616.svg)](https://doi.org/10.5281/zenodo.15864616)
+- [Open-TYNDP](https://github.com/open-energy-transition/open-tyndp) — Interfacing open energy system planning with ENTSO-E models and contributing to TYNDP [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18494363.svg)](https://doi.org/10.5281/zenodo.18494363)
+
+The example scripts use these assets for demonstration purposes.
 
 ---
 

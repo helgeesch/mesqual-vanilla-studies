@@ -3,7 +3,7 @@ from pathlib import Path
 from mesqual import StudyManager
 from mesqual.visualizations import TimeSeriesDashboardGenerator
 
-from studies.study_04_pypsa_eur_example.src.config import theme
+from studies.study_02_pypsa_eur_example.src.config import theme
 
 
 class TradeBalanceTimeSeriesDashbaordGenerator:
@@ -15,8 +15,7 @@ class TradeBalanceTimeSeriesDashbaordGenerator:
 
         data = self._study.scen_comp.fetch(flag).xs('net_exp', level='variable', axis=1)
         countries = data.columns.get_level_values(-1).unique()
-        countries = ['DE', 'AT', 'FR', 'BE']  # shorten
-        scenario_names = [s.name for s in self._study.scen.dataset_iterator]
+        countries = ['BE']  # demo only
 
         for country in countries:
             dff = data.xs(country, level=f'primary_country', axis=1)
@@ -25,17 +24,25 @@ class TradeBalanceTimeSeriesDashbaordGenerator:
             dff = dff.droplevel('type', axis=1)
             dff = dff.rename(columns=lambda x: f'NetPosition <b>{country} to {x}</b>', level=-1)
 
+            color_settings = dict()
+            for s in self._study.scenario_names:
+                color_settings[s] = dict(
+                    range_color=[-max_scen, max_scen],
+                    color_continuous_scale=theme.colors.diverging.teal_amber,
+                )
+            for c in self._study.comparison_names:
+                color_settings[c] = dict(
+                    color_continuous_scale=theme.colors.diverging.violet_green,
+                    color_continuous_midpoint=0,
+                )
+
             title = f'{country}: El. Net-Positions to Partners [MW]'
             gen = TimeSeriesDashboardGenerator(
                 x_axis='week',
                 facet_col='dataset',
                 facet_row=f'partner_country',
-                color_continuous_scale=theme.colors.diverging.teal_amber,
                 per_facet_col_colorscale=True,
-                facet_col_color_settings={
-                    s: {'range_color': [-max_scen, max_scen]}
-                    for s in scenario_names
-                },
+                facet_col_color_settings=color_settings,
             )
             fig_area = gen.get_figure(dff, title=title)
             output_file = folder.joinpath(f'{country}_trade_bal_ts.html')
@@ -43,7 +50,7 @@ class TradeBalanceTimeSeriesDashbaordGenerator:
 
 
 if __name__ == '__main__':
-    from studies.study_04_pypsa_eur_example.src.config import STUDY_FOLDER
+    from studies.study_02_pypsa_eur_example.src.config import STUDY_FOLDER
 
     study: StudyManager
     (study, )

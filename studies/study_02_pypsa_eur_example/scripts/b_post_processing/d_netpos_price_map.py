@@ -9,7 +9,7 @@ from mesqual.visualizations import folviz, valmap
 from mesqual.utils.folium_utils import set_background_color_of_map, MapCountryPlotter
 from mesqual.visualizations.folium_viz_system import PropertyMapper
 
-from studies.study_04_pypsa_eur_example.src.config import STUDY_FOLDER, theme
+from studies.study_02_pypsa_eur_example.src.config import STUDY_FOLDER, theme
 
 
 class KPISetup:
@@ -22,30 +22,24 @@ class KPISetup:
         """Execute KPI setup: clear existing KPIs and add new definitions."""
         self._clear_existing_kpis()
 
-        price_kpi_defs = self._create_price_kpi_definitions()
-        netpos_kpi_defs = self._create_net_position_kpi_definitions()
+        country_kpi_defs = self._create_country_kpi_definitions()
         flow_kpi_defs = self._create_flow_kpi_definitions()
 
-        all_kpi_defs = price_kpi_defs + netpos_kpi_defs + flow_kpi_defs
+        all_kpi_defs = country_kpi_defs + flow_kpi_defs
         self._add_kpis_to_study(all_kpi_defs)
 
     def _clear_existing_kpis(self) -> None:
         self._study.scen.clear_kpi_collection_for_all_child_datasets()
         self._study.comp.clear_kpi_collection_for_all_child_datasets()
 
-    def _create_price_kpi_definitions(self) -> list:
+    def _create_country_kpi_definitions(self) -> list:
+        flags = [
+            'countries_t.vol_weighted_marginal_price',
+            'countries_t.net_position',
+        ]
         return (
             kpis.FlagAggKPIBuilder()
-            .for_flag('countries_t.vol_weighted_marginal_price')
-            .for_all_objects()
-            .with_aggregations([kpis.Aggregations.Mean])
-            .build()
-        )
-
-    def _create_net_position_kpi_definitions(self) -> list:
-        return (
-            kpis.FlagAggKPIBuilder()
-            .for_flag('countries_t.net_position')
+            .for_flags(flags)
             .for_all_objects()
             .with_aggregations([kpis.Aggregations.Mean])
             .build()
@@ -270,15 +264,15 @@ class MapGenerator(folviz.CustomKPIGroupGenerator):
 
             if not price_kpis.empty:
                 price_group = price_kpis + flow_kpis
-                group_name = f"{dataset.name} [{agg}] - Prices"
+                group_name = f"Prices - {dataset.name} [{agg}]"
                 groups.append((group_name, price_group))
 
             if not netpos_kpis.empty:
                 netpos_group = netpos_kpis + flow_kpis
-                group_name = f"{dataset.name} [{agg}] - Net Positions"
+                group_name = f"Net Positions - {dataset.name} [{agg}]"
                 groups.append((group_name, netpos_group))
 
-        return groups
+        return list(sorted(groups))
 
     def get_generators_for_kpi(self, kpi: KPI) -> List[folviz.FoliumObjectGenerator]:
         flag = kpi.attributes.flag
@@ -313,18 +307,18 @@ if __name__ == '__main__':
     study: StudyManager
     (study, )
 
-    output_folder = STUDY_FOLDER.joinpath('dvc/output/figs_dual_groups')
+    output_folder = STUDY_FOLDER.joinpath('dvc/output/figs_map')
     os.makedirs(output_folder, exist_ok=True)
 
     KPISetup(study).run()
     map_gen = MapGenerator()
     m = map_gen.initialize_map(study)
     map_gen.add_legends_to_map(m)
-    map_gen.add_non_physical_interconnector_cables_to_map(study, m)
     map_gen.generate_and_add_feature_groups_to_map(source=study, map_obj=m, show='first')
+    map_gen.add_non_physical_interconnector_cables_to_map(study, m)
 
     # Add layer control and save
     folium.LayerControl(collapsed=False, draggable=True).add_to(m)
-    m.save(output_folder.joinpath('dual_group_maps.html'))
+    m.save(output_folder.joinpath('map.html'))
 
-    print(f"Dual-group map saved to: {output_folder.joinpath('dual_group_maps.html')}")
+    print(f"Dual-group map saved to: {output_folder.joinpath('map.html')}")

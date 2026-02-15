@@ -1,6 +1,6 @@
 from mesqual_pypsa import PyPSADataset
 
-from studies.study_04_pypsa_eur_example.src.study_interpreters import (
+from studies.study_02_pypsa_eur_example.src.study_interpreters import (
     TransmissionModelInterpreter,
     CountriesModelInterpreter,
     CountryBordersModelInterpreter,

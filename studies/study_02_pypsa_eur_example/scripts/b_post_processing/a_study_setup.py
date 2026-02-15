@@ -3,7 +3,7 @@ import pypsa
 from mesqual import StudyManager, databases
 from mesqual_pypsa import PyPSADataset, PyPSADatasetConfig
 
-from studies.study_04_pypsa_eur_example.src.config import STUDY_FOLDER, StudyDatabase
+from studies.study_02_pypsa_eur_example.src.config import STUDY_FOLDER, StudyDatabase
 
 
 def get_n(scen: str) -> pypsa.Network:
