@@ -60,7 +60,11 @@ plugins:
       ignore:
         - "*.py"
 
-#exclude_docs: |
+exclude_docs: |
+  dvc/
+  non_versioned/
+  __pycache__/
+  .ipynb_checkpoints/
 
 nav:
   - Home:

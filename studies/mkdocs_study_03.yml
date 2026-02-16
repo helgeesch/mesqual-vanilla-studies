@@ -2,6 +2,12 @@ site_name: 'mesqual study_03'
 
 docs_dir: ./study_03_plexos_example
 
+exclude_docs: |
+  dvc/
+  non_versioned/
+  __pycache__/
+  .ipynb_checkpoints/
+
 theme:
   name: material
   palette:

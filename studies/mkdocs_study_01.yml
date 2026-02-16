@@ -2,6 +2,12 @@ site_name: 'mesqual study_01'
 
 docs_dir: ./study_01_intro_to_mesqual
 
+exclude_docs: |
+  dvc/
+  non_versioned/
+  __pycache__/
+  .ipynb_checkpoints/
+
 theme:
   name: material
   palette:
