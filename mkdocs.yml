@@ -6,6 +6,7 @@ repo_url: 'https://github.com/helgeesch/mesqual-vanilla-studies/'
 theme:
   name: material
   logo: assets/logo-white.svg
+  favicon: assets/logo-turq.svg
   palette:
     primary: 'teal'
     accent: 'amber'
@@ -70,6 +71,7 @@ nav:
   #  - MESQUAL PYPSA: '!include submodules/mesqual-pypsa/mkdocs.yml'
   #  - MESQUAL AI: '!include submodules/mesqual-ai/mkdocs.yml'
   - Studies & Examples:
+      - studies_examples.md
       - Intro to MESQUAL: '!include studies/mkdocs_study_01.yml'
       - PyPSA EUR Example: '!include studies/mkdocs_study_02.yml'
       - Plexos Example: '!include studies/mkdocs_study_03.yml'
