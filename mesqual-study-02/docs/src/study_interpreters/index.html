@@ -1,0 +1,3850 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.mesqual.io/mesqual-study-02/docs/src/study_interpreters/">
+      
+      
+        <link rel="prev" href="../study_database/">
+      
+      
+        <link rel="next" href="../../../../mesqual-study-03/">
+      
+      
+      <link rel="icon" href="../../../../assets/logo-turq.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Study Interpreters - MESQUAL Suite Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#study_interpreterspy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="MESQUAL Suite Documentation" class="md-header__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MESQUAL Suite Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Study Interpreters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../mesqual-package-documentation/about_mesqual/" class="md-tabs__link">
+          
+  
+  
+  MESQUAL API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../studies_examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Studies & Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="MESQUAL Suite Documentation" class="md-nav__button md-logo" aria-label="MESQUAL Suite Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-white.svg" alt="logo">
+
+    </a>
+    MESQUAL Suite Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/helgeesch/mesqual-vanilla-studies/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MESQUAL Suite Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about_mesqual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About MESQUAL Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about_vanilla_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Vanilla Studies Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MESQUAL API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/about_mesqual/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Core
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/study_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StudyManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datasets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/flag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/kpis/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    KPIs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            KPIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Core Classes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Core Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/kpi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI & Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/aggregations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/kpis/builders/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Builders
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Builders
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/builders/flag_agg_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Agg Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/builders/comparison_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison Builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/builders/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Builder Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/kpis/definitions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Definitions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/definitions/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Definition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/definitions/flag_aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/definitions/comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/kpis/definitions/custom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/visualization/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Visualization Modules
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TimeSeriesDashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Folium Viz System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Folium Viz System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/circle_marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circle Marker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/line_text_overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Line Text Overlay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/arrow_icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrow Icon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2_7" id="__nav_2_3_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abstract System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/data_item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/kpi_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KPI Collection Visualizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/folium_viz_system/legends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legends
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/html_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/visualization/html_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Energy Data Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Energy Data Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Area Accounting
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Area Accounting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/model_gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area / Border Model Generators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/area_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Area Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/border_variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Border Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Model Membership Handling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Model Membership Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/property_enricher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Property Enricher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/model_handling/pairs_appender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pairs Appender
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Variable Utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Variable Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/in_common_aggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    In-common Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/direction_aggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Up-/Down Directional Aggregations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/congestion_rent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Congestion Rent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/regional_trade_balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regional Trade Balance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/granularity_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Granularity Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/network_lines_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Lines Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/energy_data_handling/time_series_gap_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Series Gap Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    pandas_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            pandas_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/flatten_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flatten DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/pend_props/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pend Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filter by Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/xs_df/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    xs DF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/sort_multiindex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sort MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/merge_multi_index_levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Merge MultiIndex Levels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/set_new_column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set New Column in MultiIndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/pandas_utils/combine_dfs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Combine DFs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/utils/plotly_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    plotly_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            plotly_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/plotly_utils/plotly_theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PlotlyTheme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/plotly_utils/figure_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    figure_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/plotly_utils/px_category_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    px_category_utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-package-documentation/api_reference/utils/folium_utils/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    folium_utils
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            folium_utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-package-documentation/api_reference/utils/folium_utils/screenshotter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Screenshotter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../studies_examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Studies & Examples
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Studies & Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../mesqual-study-01/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Intro to MESQUAL
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Intro to MESQUAL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_101_study_manager_and_basic_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 101: StudyManager and Dataset Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_102_mastering_data_fetching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 102: Advanced Data Fetching Techniques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_103_scenario_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 103: Scenario Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    KPI Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            KPI Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_201_kpi_framework_and_units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 201: KPI Framework and Unit Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_202_kpi_collections_and_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 202: KPI Collections and Pretty Tables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Visualization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_301_time_series_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 301: Time Series Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_302_segmented_colormap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 302: Segmented Colormap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_303_folium_model_df_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 303: Folium Model Data Visualization - Areas, Points, and Lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_304_folium_area_kpi_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 304: Folium KPI Visualization System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_307_country_plotter_util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 307: Country Plotter Utility Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-01/notebooks/mesqual_308_html_dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MESQUAL 305: HTML Dashboard Utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    PyPSA EUR Example
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            PyPSA EUR Example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/a_study_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Study Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/b_simple_fetch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Fetch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/c_trade_balance_heatmap_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trade Balance Heatmap Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/c_trade_balance_line_fig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trade Balance Line Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/d_netpos_price_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Net Position & Price Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Source
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Source
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Study Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Study Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Study Interpreters
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mesqual-study-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plexos Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="study_interpreterspy">study_interpreters.py<a class="headerlink" href="#study_interpreterspy" title="Permanent link">&para;</a></h1>
+<p><a class="md-button" href="https://github.com/helgeesch/mesqual-vanilla-studies/blob/main/studies/study_02_pypsa_eur_example/src/study_interpreters.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span> View on GitHub</a></p>
+<p>Custom interpreters that extend <code>PyPSADataset</code> with derived data specific to this study:</p>
+<ul>
+<li><strong>CountriesModelInterpreter</strong> — builds a country-level GeoDataFrame from bus topology</li>
+<li><strong>TransmissionModelInterpreter</strong> — aggregates lines, links, and transformers into a unified branches model</li>
+<li><strong>CountryBordersModelInterpreter</strong> — detects cross-border connections and computes border geometries</li>
+<li><strong>BusLoads</strong> — aggregates load time series to the bus level</li>
+<li><strong>CountryVolWeightedPrice</strong> — calculates demand volume-weighted marginal prices per country</li>
+<li><strong>CountryNetPosition</strong> — computes net positions and bilateral trade balances between countries</li>
+<li><strong>BranchesP</strong> — merges power flow time series (p0, p1) across all branch types</li>
+<li><strong>CountryBorderFlows</strong> — calculates net cross-border electricity flows</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.energy_data_handling</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlowType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.utils.pandas_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">filter_by_model_query</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.utils.pandas_utils.pend_props</span><span class="w"> </span><span class="kn">import</span> <span class="n">prepend_model_prop_levels</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.energy_data_handling.area_accounting</span><span class="w"> </span><span class="kn">import</span> <span class="n">AreaPriceCalculator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.typevars</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">DatasetConfigType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.utils.folium_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapCountryPlotter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.energy_data_handling.area_accounting</span><span class="w"> </span><span class="kn">import</span> <span class="n">AreaBorderModelGenerator</span><span class="p">,</span> <span class="n">AreaBorderGeometryCalculator</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.network_interpreters.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSAInterpreter</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">mesqual_pypsa.pypsa_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPSADatasetConfig</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CountriesModelInterpreter</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+    <span class="n">_country_plotter</span> <span class="o">=</span> <span class="n">MapCountryPlotter</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;countries&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">PyPSADatasetConfig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+
+        <span class="n">buses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+        <span class="n">filtered_buses</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="n">buses</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MWh_el&#39;</span><span class="p">]</span>
+
+        <span class="n">countries</span> <span class="o">=</span> <span class="n">filtered_buses</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_country_plotter</span><span class="o">.</span><span class="n">get_geojson_for_country</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">]</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="n">geometries</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">get_largest_polygon_rep_point</span><span class="p">(</span><span class="n">geom</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Get representative point of the largest polygon in a geometry.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">geom</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="s1">&#39;MultiPolygon&#39;</span><span class="p">:</span>
+                <span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">geoms</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">largest</span> <span class="o">=</span> <span class="n">geom</span>
+            <span class="k">return</span> <span class="n">largest</span><span class="o">.</span><span class="n">representative_point</span><span class="p">()</span>
+
+        <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;projection_point&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_largest_polygon_rep_point</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">gdf</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TransmissionModelInterpreter</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;branches&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="s1">&#39;links&#39;</span><span class="p">,</span> <span class="s1">&#39;transformers&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">PyPSADatasetConfig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">)</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;links&#39;</span><span class="p">)</span>
+        <span class="n">trafos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;transformers&#39;</span><span class="p">)</span>
+
+        <span class="n">branches_model_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">lines</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">trafos</span><span class="p">])</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;Branch&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">branches_model_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Overlapping names between lines, links, and trafos. Not supported&#39;</span><span class="p">)</span>
+
+        <span class="n">branches_model_df</span> <span class="o">=</span> <span class="n">branches_model_df</span><span class="p">[</span><span class="n">branches_model_df</span><span class="p">[</span><span class="s1">&#39;carrier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;DC&#39;</span><span class="p">])]</span>
+        <span class="k">return</span> <span class="n">branches_model_df</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryBordersModelInterpreter</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;country_borders&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;branches&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">PyPSADatasetConfig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">node_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+        <span class="n">branch_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches&#39;</span><span class="p">)</span>
+        <span class="n">country_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">)</span>
+        <span class="n">border_model_gen</span> <span class="o">=</span> <span class="n">AreaBorderModelGenerator</span><span class="p">(</span>
+            <span class="n">node_model_df</span><span class="p">,</span>
+            <span class="n">branch_model_df</span><span class="p">,</span>
+            <span class="n">area_column</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span>
+            <span class="n">node_from_col</span><span class="o">=</span><span class="s1">&#39;bus0&#39;</span><span class="p">,</span>
+            <span class="n">node_to_col</span><span class="o">=</span><span class="s1">&#39;bus1&#39;</span><span class="p">,</span>
+            <span class="n">border_identifier</span><span class="o">=</span><span class="s1">&#39;_border&#39;</span><span class="p">,</span>
+            <span class="n">source_area_identifier</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+            <span class="n">target_area_identifier</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">border_geo_calc</span> <span class="o">=</span> <span class="n">AreaBorderGeometryCalculator</span><span class="p">(</span><span class="n">country_model_df</span><span class="p">)</span>
+        <span class="n">country_border_model_df</span> <span class="o">=</span> <span class="n">border_model_gen</span><span class="o">.</span><span class="n">generate_area_border_model</span><span class="p">()</span>
+        <span class="n">country_border_model_df</span> <span class="o">=</span> <span class="n">border_model_gen</span><span class="o">.</span><span class="n">enhance_with_geometry</span><span class="p">(</span><span class="n">country_border_model_df</span><span class="p">,</span> <span class="n">border_geo_calc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">country_border_model_df</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BusLoads</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses_t.load_p&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;loads_t.p&#39;</span><span class="p">,</span> <span class="s1">&#39;loads&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">DatasetConfigType</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">loads</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;loads&#39;</span><span class="p">)</span>
+        <span class="n">loads_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;loads_t.p&#39;</span><span class="p">)</span>
+        <span class="n">loads_t</span> <span class="o">=</span> <span class="n">prepend_model_prop_levels</span><span class="p">(</span><span class="n">loads_t</span><span class="p">,</span> <span class="n">loads</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">loads_t</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;bus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;Bus&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryVolWeightedPrice</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates Demand Volume Weighted Price per country&quot;&quot;&quot;</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;countries_t.vol_weighted_marginal_price&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">,</span> <span class="s1">&#39;buses_t.load_p&#39;</span><span class="p">,</span> <span class="s1">&#39;buses&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">DatasetConfigType</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">parent_ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span>
+
+        <span class="n">bus_model_df</span> <span class="o">=</span> <span class="n">parent_ds</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+        <span class="n">electricity_buses</span> <span class="o">=</span> <span class="n">bus_model_df</span><span class="p">[</span><span class="n">bus_model_df</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MWh_el&#39;</span><span class="p">]</span>
+
+        <span class="n">prices</span> <span class="o">=</span> <span class="n">parent_ds</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses_t.marginal_price&#39;</span><span class="p">)</span>
+        <span class="n">loads</span> <span class="o">=</span> <span class="n">parent_ds</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses_t.load_p&#39;</span><span class="p">)</span>
+
+        <span class="n">my_buses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">electricity_buses</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">prices</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">loads</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        <span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">my_buses</span><span class="p">]</span>
+        <span class="n">loads</span> <span class="o">=</span> <span class="n">loads</span><span class="p">[</span><span class="n">my_buses</span><span class="p">]</span>
+
+        <span class="n">area_price_gen</span> <span class="o">=</span> <span class="n">AreaPriceCalculator</span><span class="p">(</span><span class="n">node_model_df</span><span class="o">=</span><span class="n">electricity_buses</span><span class="p">,</span> <span class="n">area_column</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+        <span class="n">area_price</span> <span class="o">=</span> <span class="n">area_price_gen</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">node_price_df</span><span class="o">=</span><span class="n">prices</span><span class="p">,</span> <span class="n">weighting_factor_df</span><span class="o">=</span><span class="n">loads</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">area_price</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryNetPosition</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates Net-Position and Trade-Balance per country&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;countries_t.net_position&#39;</span><span class="p">,</span> <span class="s1">&#39;countries_t.trade_balance_per_partner&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;branches&#39;</span><span class="p">,</span> <span class="s1">&#39;branches_t.p0&#39;</span><span class="p">,</span> <span class="s1">&#39;branches_t.p1&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">DatasetConfigType</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.energy_data_handling</span><span class="w"> </span><span class="kn">import</span> <span class="n">NetworkLineFlowsData</span><span class="p">,</span> <span class="n">RegionalTradeBalanceCalculator</span>
+
+        <span class="n">branch_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches&#39;</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">)</span>
+        <span class="n">bus_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">)</span>
+
+        <span class="n">trade_bal_calc</span> <span class="o">=</span> <span class="n">RegionalTradeBalanceCalculator</span><span class="p">(</span>
+            <span class="n">branch_model_df</span><span class="p">,</span>
+            <span class="n">bus_model_df</span><span class="p">,</span>
+            <span class="n">agg_region_column</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span>
+            <span class="n">node_from_col</span><span class="o">=</span><span class="s1">&#39;bus0&#39;</span><span class="p">,</span>
+            <span class="n">node_to_col</span><span class="o">=</span><span class="s1">&#39;bus1&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">line_flow_data</span> <span class="o">=</span> <span class="n">NetworkLineFlowsData</span><span class="o">.</span><span class="n">from_nodal_net_injection</span><span class="p">(</span>
+            <span class="n">node_a_net_injection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches_t.p0&#39;</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">),</span>
+            <span class="n">node_b_net_injection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches_t.p1&#39;</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">trade_bal_df</span> <span class="o">=</span> <span class="n">trade_bal_calc</span><span class="o">.</span><span class="n">get_trade_balance</span><span class="p">(</span><span class="n">line_flow_data</span><span class="p">,</span> <span class="n">flow_type</span><span class="o">=</span><span class="n">FlowType</span><span class="o">.</span><span class="n">PRE_LOSS</span><span class="p">)</span>
+        <span class="n">trade_bal_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Country&#39;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;trade_balance_per_partner&#39;</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">trade_bal_df</span>
+
+        <span class="k">elif</span> <span class="s1">&#39;net_position&#39;</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+            <span class="n">net_position</span> <span class="o">=</span> <span class="n">trade_bal_calc</span><span class="o">.</span><span class="n">get_net_position_per_primary_level</span><span class="p">(</span><span class="n">trade_bal_df</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">net_position</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Flag </span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="s1"> logic not implemented in this class. check your logic.&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BranchesP</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+    <span class="n">_object_classes_to_merge</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="s1">&#39;links&#39;</span><span class="p">,</span> <span class="s1">&#39;transformers&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;branches_t.p0&#39;</span><span class="p">,</span> <span class="s1">&#39;branches_t.p1&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s1">_t.p</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object_classes_to_merge</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">DatasetConfigType</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">which_power</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">flag</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">branches_t_p</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s1">_t.p</span><span class="si">{</span><span class="n">which_power</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object_classes_to_merge</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;Branch&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">branches_t_p</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryBorderFlows</span><span class="p">(</span><span class="n">PyPSAInterpreter</span><span class="p">):</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;country_borders_t.net_flow&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_required_flags_for_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">FlagType</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;branches&#39;</span><span class="p">,</span> <span class="s1">&#39;branches_t.p0&#39;</span><span class="p">,</span> <span class="s1">&#39;branches_t.p1&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">FlagType</span><span class="p">,</span> <span class="n">effective_config</span><span class="p">:</span> <span class="n">DatasetConfigType</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mesqual.energy_data_handling</span><span class="w"> </span><span class="kn">import</span> <span class="n">NetworkLineFlowsData</span><span class="p">,</span> <span class="n">BorderFlowCalculator</span>
+
+        <span class="n">country_border_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;country_borders&#39;</span><span class="p">)</span>
+        <span class="n">branch_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches&#39;</span><span class="p">)</span>
+        <span class="n">bus_model_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;buses&#39;</span><span class="p">)</span>
+
+        <span class="n">flow_calc</span> <span class="o">=</span> <span class="n">BorderFlowCalculator</span><span class="p">(</span>
+            <span class="n">country_border_model_df</span><span class="p">,</span>
+            <span class="n">branch_model_df</span><span class="p">,</span>
+            <span class="n">bus_model_df</span><span class="p">,</span>
+            <span class="s1">&#39;country&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus0&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus1&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">line_flow_data</span> <span class="o">=</span> <span class="n">NetworkLineFlowsData</span><span class="o">.</span><span class="n">from_nodal_net_injection</span><span class="p">(</span>
+            <span class="n">node_a_net_injection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches_t.p0&#39;</span><span class="p">),</span>
+            <span class="n">node_b_net_injection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_dataset</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;branches_t.p1&#39;</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">flow_calc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">line_flow_data</span><span class="p">,</span> <span class="s1">&#39;sent&#39;</span><span class="p">,</span> <span class="s1">&#39;net&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.tabs.link", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -2,338 +2,378 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.mesqual.io/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/about_mesqual/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/about_vanilla_studies/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/studies_examples/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-package-documentation/about_mesqual/</loc>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/datasets/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/enums/</loc>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/flag/</loc>
-         <lastmod>2025-12-23</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/flag_index/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/study_manager/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/units/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/validation/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/granularity_modules/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/network_lines_data/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/time_series_gap_handling/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/area_variables/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/border_variables/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/area_accounting/model_gen/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/model_handling/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/model_handling/pairs_appender/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/model_handling/property_enricher/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/congestion_rent/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/direction_aggs/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/in_common_aggs/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/energy_data_handling/variable_utils/regional_trade_balance/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/aggregations/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/collection/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/kpi/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/builders/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/builders/base/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/builders/comparison_builder/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/builders/flag_agg_builder/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/definitions/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/definitions/base/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/definitions/comparison/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/definitions/custom/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/kpis/definitions/flag_aggregation/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/folium_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/folium_utils/screenshotter/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/combine_df/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/filter/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/flatten_df/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/merge_multi_index_levels/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/pend_props/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/set_new_column/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/sort_multiindex/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/pandas_utils/xs_df/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/plotly_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/plotly_utils/figure_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/plotly_utils/plotly_theme/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/utils/plotly_utils/px_category_utils/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/html_dashboard/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/html_table/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/time_series_dashboard/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/areas/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/arrow_icon/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/circle_marker/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/data_item/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/kpi_collection/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/legends/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/line_text_overlay/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/lines/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/system/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-package-documentation/api_reference/visualization/folium_viz_system/text_overlay/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/</loc>
-         <lastmod>2025-12-23</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.mesqual.io/mesqual-study-01/non_versioned/_tmp/nbviewer/</loc>
-         <lastmod>2025-12-23</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.mesqual.io/mesqual-study-01/non_versioned/_tmp/mescal_101_study_manager_and_basic_fetching/mescal_101_study_manager_and_basic_fetching/</loc>
-         <lastmod>2025-12-23</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.mesqual.io/mesqual-study-01/non_versioned/_tmp/mescal_102_mastering_data_fetching/mescal_102_mastering_data_fetching/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/_mesqual_000_study_template/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_101_study_manager_and_basic_fetching/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_102_mastering_data_fetching/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_103_scenario_attributes/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_201_kpi_framework_and_units/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_202_kpi_collections_and_tables/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_301_time_series_dashboard/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_302_segmented_colormap/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_303_folium_model_df_map/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_304_folium_area_kpi_map/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_307_country_plotter_util/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
     </url>
     <url>
          <loc>https://docs.mesqual.io/mesqual-study-01/notebooks/mesqual_308_html_dashboards/</loc>
-         <lastmod>2025-12-23</lastmod>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/scripts/a_study_setup/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/scripts/b_simple_fetch/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/scripts/c_trade_balance_heatmap_dashboard/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/scripts/c_trade_balance_line_fig/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/scripts/d_netpos_price_map/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/src/config/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/src/study_database/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/src/study_dataset/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-02/docs/src/study_interpreters/</loc>
+         <lastmod>2026-02-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.mesqual.io/mesqual-study-03/</loc>
+         <lastmod>2026-02-16</lastmod>
     </url>
 </urlset>
