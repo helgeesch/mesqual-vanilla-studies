@@ -3,6 +3,12 @@
 
 # <img src="https://raw.githubusercontent.com/helgeesch/mesqual/18fe3fc20bace115a116555b2872d57925698e48/assets/logo-turq.svg" width="30" height="30" alt="logo"> MESQUAL vanilla studies
 
+> [!WARNING]
+> **Deprecated.** These example studies use [mesqual](https://github.com/helgeesch/mesqual) 0.x and mesqual-pypsa. They do not work with mesqual 2.0 and later, and they are not updated.
+> - For mesqual 2, start with the quickstart and the guides at [docs.mesqual.io](https://docs.mesqual.io/guides/use-in-a-study/). They run on the synthetic platform that ships with mesqual (`mesqual.testing`), with no extra data.
+> - To run these studies as they are, install mesqual 0.1.0 from git (`pip install "mesqual @ git+https://github.com/helgeesch/mesqual@v0.1.0"`) and the matching mesqual-pypsa.
+> - The docs site docs.mesqual.io is now built from the mesqual repo.
+
 ## Overview
 
 **MESQUAL** (**M**odular **E**nergy **S**cenario Comparison Library for **Qu**antitative and **Qu**alitative An**al**ysis) is a Python framework for post-processing and analyzing energy systems data from any platform, with a focus on multi-scenario processing, scenario comparison, KPI calculation, and plotly / folium (map) visualizations.  
